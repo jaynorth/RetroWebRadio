@@ -42,6 +42,7 @@
 
     <Grid ShowGridLines="True"  >
         <Grid.Background>
+            
             <ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>

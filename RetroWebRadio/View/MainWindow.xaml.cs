@@ -24,5 +24,10 @@ namespace RetroWebRadio.View
         {
             InitializeComponent();
         }
+
+        private void Dashboard_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
