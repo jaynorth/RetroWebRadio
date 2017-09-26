@@ -12,20 +12,40 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using RetroWebRadio.Properties;
 using ViewModelsXML.ViewModels;
+using Models.Model;
 
-namespace RetroWebRadio.View
+namespace RetroWebRadio.View.UserControls
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour RadioLists.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RadioLists : UserControl
     {
-        public MainWindow()
+
+        
+
+        public RadioLists()
         {
             InitializeComponent();
-            MainRadioViewModel mrvm = new MainRadioViewModel();
-            DataContext = mrvm;
+
+           
+           
+
+        }
+
+     
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            RadioStation selected = (RadioStation)datagridRadioList.SelectedItem;
+
+            
+            
+
+            
         }
 
        

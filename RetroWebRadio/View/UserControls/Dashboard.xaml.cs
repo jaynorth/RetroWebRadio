@@ -28,11 +28,10 @@ namespace RetroWebRadio.View.UserControls
         public Dashboard()
         {
             InitializeComponent();
-            string src = "http://wgltradio.ilstu.edu:8000/wgltjazz.mp3";
-            Player.Source = new Uri(src);
+           
 
 
-            Player.Volume = 0;
+            
 
             dt.Tick += new EventHandler(dt_Tick);
             dt.Interval = new TimeSpan(0, 0, 1);

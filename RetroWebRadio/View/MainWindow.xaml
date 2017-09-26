@@ -23,6 +23,7 @@
             <ColumnDefinition Width="100*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <userControls:Dashboard Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Loaded="Dashboard_Loaded" ></userControls:Dashboard>
+        <userControls:Dashboard Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"  ></userControls:Dashboard>
+        <userControls:RadioLists Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></userControls:RadioLists>
     </Grid>
 </Window>

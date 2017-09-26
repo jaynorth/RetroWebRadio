@@ -76,12 +76,13 @@
             <StackPanel Grid.Row="1" Grid.Column="3" >
 
                 <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" ><Run Text="test"/></TextBlock>
+                <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" ><Run Text="{Binding CurrentStation.Name}"/></TextBlock>
             </StackPanel>
         </Border>
         <StackPanel x:Name="volumeStack" Grid.Row="1" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SizeChanged="StackPanel_SizeChanged">
             <Slider x:Name="volumeSlider" Orientation="Vertical"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Value="0" TickPlacement="TopLeft" TickFrequency="0.1"/>
         </StackPanel>
-        <MediaElement Name="Player" LoadedBehavior="Manual"></MediaElement>
+        <MediaElement Name="Player" LoadedBehavior="Manual" Source="{Binding CurrentStation.Url}" Volume="0"></MediaElement>
         <TextBlock x:Name="volumeDisplay" Grid.Column="5" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>
     </Grid>
 
