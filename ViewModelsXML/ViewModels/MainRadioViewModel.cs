@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using ViewModelsXML.ViewModels.Helpers;
 
 namespace ViewModelsXML.ViewModels
 {
-    public class MainRadioViewModel
+    public class MainRadioViewModel : BaseViewModel
     {
         public MainRadioViewModel()
         {
@@ -27,18 +28,25 @@ namespace ViewModelsXML.ViewModels
             string path = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\RadioStations.xml";
             XDocument doc = XDocument.Load(path);
 
-            List<RadioStation> list = new List<RadioStation>();
-              
-            list = (from s in doc.Descendants("station")
+             
+
+            List<RadioStation> list = (from station in doc.Descendants("station")
                                        select new RadioStation()
                                        {
-                                           Id = (int)s.Element("id"),
-                                           Name = (string)s.Element("name"),
-                                           Genre = (string)s.Element("genre"),
-                                           Country = (string)s.Element("country"),
-                                           Url = (string)s.Element("url")
+                                         //  Id = (int)station.Element("id"),
+                                           Name = (string)station.Element("name"),
+                                           Category = (string)station.Element("category"),
+                                           Country = (string)station.Element("country"),
+                                           Url = (string)station.Element("url")
 
                                        }).ToList();
+            int Id = 10;
+
+            foreach (var item in list)
+            {
+                item.Id = Id;
+                Id++;
+            }
 
             StationList = new ObservableCollection<RadioStation>(list);
         }
@@ -48,7 +56,10 @@ namespace ViewModelsXML.ViewModels
         public ObservableCollection<RadioStation> StationList
         {
             get { return _stationList; }
-            set { _stationList = value; }
+            set {
+                _stationList = value;
+                OnPropertyChanged();
+            }
         }
 
         private RadioStation _currentStation;
@@ -56,7 +67,12 @@ namespace ViewModelsXML.ViewModels
         public RadioStation    CurrentStation
         {
             get { return _currentStation; }
-            set { _currentStation = value; }
+            set {
+
+                _currentStation = value;
+                OnPropertyChanged();
+
+            }
         }
 
 

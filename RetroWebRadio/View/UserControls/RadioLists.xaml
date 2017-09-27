@@ -6,16 +6,53 @@
              xmlns:local="clr-namespace:RetroWebRadio.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <Style  TargetType="{x:Type DataGrid}">
+
+            <Setter Property="Foreground" Value="YellowGreen" />
+            <Setter Property="Background" Value="Red"></Setter>
+            
+
+        </Style>
+        <Style  TargetType="{x:Type DataGridCell}" >
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                    <Setter Property="Background" Value="Yellow"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Foreground" Value="YellowGreen"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Margin" Value="5, 10, 5, 10"></Setter>
+        </Style>
+
+    </UserControl.Resources>
     <Grid>
+        <Grid.Background>
 
-        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"  MouseDoubleClick="DataGrid_MouseDoubleClick" SelectedItem="{Binding CurrentStation, Mode=TwoWay}" >
-            <DataGrid.Background>
+            <ImageBrush ImageSource="/Images/canstock26763900.jpg" Stretch="UniformToFill"/>
 
-                <ImageBrush ImageSource="/Images/canstock26763900.jpg" Stretch="UniformToFill"/>
 
-               
-            </DataGrid.Background>
+        </Grid.Background>
+        
+
+        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" >
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" >
+                    
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}">
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Country" Binding="{Binding Country}">
+
+                </DataGridTextColumn>
+            </DataGrid.Columns>
         </DataGrid>
-    
+
     </Grid>
 </UserControl>

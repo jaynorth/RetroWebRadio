@@ -27,7 +27,7 @@ namespace XMLtest
                         {
                             Id = (int)s.Element("id"),
                             Name = (string)s.Element("name"),
-                            Genre = (string)s.Element("genre"),
+                            Category = (string)s.Element("category"),
                             Country = (string)s.Element("country"),
                             Url = (string)s.Element("url")          
 

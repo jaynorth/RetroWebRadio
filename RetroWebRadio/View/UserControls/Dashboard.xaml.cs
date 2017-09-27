@@ -41,7 +41,27 @@ namespace RetroWebRadio.View.UserControls
 
             Player.BufferingEnded += Player_BufferingEnded;
 
+            Player.MediaEnded += Player_MediaEnded;
 
+            Player.MediaOpened += Player_MediaOpened;
+
+            Player.MediaFailed += Player_MediaFailed;
+
+        }
+
+        private void Player_MediaFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            displayBox.Text = "MediaFailed";
+        }
+
+        private void Player_MediaOpened(object sender, RoutedEventArgs e)
+        {
+            displayBox.Text = "MediaOpened";
+        }
+
+        private void Player_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            displayBox.Text = "MediaEnded";
         }
 
         private void Player_BufferingEnded(object sender, RoutedEventArgs e)
@@ -55,6 +75,9 @@ namespace RetroWebRadio.View.UserControls
             displayBox.Text = "Buffer Progress " + b + " %";
             dt.Stop();
             displayBox.Text = "Playing";
+
+ 
+            // displayBox.Text += " " + Player.NaturalDuration;
         }
 
         private void dt_Tick(object sender, EventArgs e)

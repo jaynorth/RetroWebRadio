@@ -15,7 +15,7 @@ namespace Models.Model
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Genre { get; set; }
+        public string Category { get; set; }
         public string Country { get; set; }
         public string Url { get; set; }
     

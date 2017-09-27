@@ -38,15 +38,7 @@ namespace RetroWebRadio.View.UserControls
 
      
 
-        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            RadioStation selected = (RadioStation)datagridRadioList.SelectedItem;
-
-            
-            
-
-            
-        }
+        
 
        
     }

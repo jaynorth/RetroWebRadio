@@ -24,6 +24,6 @@
         </Grid.ColumnDefinitions>
 
         <userControls:Dashboard Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"  ></userControls:Dashboard>
-        <userControls:RadioLists Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></userControls:RadioLists>
+        <userControls:RadioLists Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1"></userControls:RadioLists>
     </Grid>
 </Window>
