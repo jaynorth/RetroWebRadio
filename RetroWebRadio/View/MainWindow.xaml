@@ -6,24 +6,36 @@
         xmlns:local="clr-namespace:RetroWebRadio.View"
         xmlns:userControls="clr-namespace:RetroWebRadio.View.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="700" MinWidth="700" MinHeight="500">
+        Title="MainWindow" Height="600" Width="900" MinWidth="700" MinHeight="500">
     <Grid ShowGridLines="True" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70*"></RowDefinition>
-            <RowDefinition Height="123*"></RowDefinition>
-            <RowDefinition Height="70*"></RowDefinition>
-            <RowDefinition Height="70*"></RowDefinition>
-            <RowDefinition Height="67*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"></ColumnDefinition>
-            <ColumnDefinition Width="70*"></ColumnDefinition>
-            <ColumnDefinition Width="160*"></ColumnDefinition>
-            <ColumnDefinition Width="70*"></ColumnDefinition>
-            <ColumnDefinition Width="100*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        <TabControl>
+            <TabItem Header="Main">
+                <Grid ShowGridLines="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70*"></RowDefinition>
+                        <RowDefinition Height="123*"></RowDefinition>
+                        <RowDefinition Height="70*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="67*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="160*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-        <userControls:Dashboard Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"  ></userControls:Dashboard>
-        <userControls:RadioLists Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1"></userControls:RadioLists>
+                    <userControls:Dashboard Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1"  ></userControls:Dashboard>
+                    <userControls:RadioLists Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1"></userControls:RadioLists>
+                </Grid>
+            </TabItem>
+            <TabItem Header="XML">
+                <userControls:ProcessXML>
+                    
+                </userControls:ProcessXML>
+            </TabItem>
+        </TabControl>
+       
     </Grid>
 </Window>

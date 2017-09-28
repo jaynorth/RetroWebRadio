@@ -62,6 +62,9 @@
     <Compile Include="View\UserControls\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\ProcessXML.xaml.cs">
+      <DependentUpon>ProcessXML.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\RadioLists.xaml.cs">
       <DependentUpon>RadioLists.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\UserControls\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\ProcessXML.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

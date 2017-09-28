@@ -10,25 +10,29 @@
 
         <Style  TargetType="{x:Type DataGrid}">
 
-            <Setter Property="Foreground" Value="YellowGreen" />
+            <Setter Property="Foreground" Value="GreenYellow" />
             <Setter Property="Background" Value="Red"></Setter>
             
 
         </Style>
         <Style  TargetType="{x:Type DataGridCell}" >
+            <Setter Property="Margin" Value="10, 0, 10, 0"></Setter>
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Foreground" Value="Black"></Setter>
-                    <Setter Property="Background" Value="Yellow"></Setter>
+                    <Setter Property="Foreground" Value="Yellow"></Setter>
+                    <Setter Property="Background" Value="transparent"></Setter>
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>                    
                 </Trigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="{x:Type DataGridColumnHeader}">
-            <Setter Property="Foreground" Value="YellowGreen"></Setter>
+            <Setter Property="Foreground" Value="GreenYellow"></Setter>
             <Setter Property="FontWeight" Value="Bold"></Setter>
             <Setter Property="Background" Value="Transparent"></Setter>
-            <Setter Property="Margin" Value="5, 10, 5, 10"></Setter>
+            <Setter Property="Margin" Value="10, 10, 10, 15"></Setter>
         </Style>
+       
 
     </UserControl.Resources>
     <Grid>
@@ -40,8 +44,11 @@
         </Grid.Background>
         
 
-        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" >
+        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" RowHeaderWidth="0" >
             <DataGrid.Columns >
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" >
+
+                </DataGridTextColumn>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" >
                     
                 </DataGridTextColumn>

@@ -46,44 +46,51 @@
             <ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="8*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.66*"></ColumnDefinition>
-            <ColumnDefinition Width="0.66*"></ColumnDefinition>
-            <ColumnDefinition  Width="0.66*"></ColumnDefinition>
-            <ColumnDefinition Width="4*" ></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition  Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+            <ColumnDefinition Width="50" ></ColumnDefinition>
+            <ColumnDefinition Width="10" ></ColumnDefinition>
+
         </Grid.ColumnDefinitions>
 
-        <RadioButton x:Name="RadioOff" Style="{StaticResource RedGreenRadio}"  Grid.Row="1" Grid.Column="0" IsChecked="False" HorizontalAlignment="Left" >
+        <RadioButton x:Name="RadioOff" Style="{StaticResource RedGreenRadio}"  Grid.Row="3" Grid.Column="1" IsChecked="False" HorizontalAlignment="Left" >
 
         </RadioButton>
 
-        <Button x:Name="play_button" Content="play" Grid.Column="0" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8" Grid.Row="1" Style="{DynamicResource playButton}" VerticalAlignment="Bottom" Width="20"  Click="playButton_Click"/>
-        <Button x:Name="pause_button"  Content="Pause" HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="auto" Click="pause_button_Click"/>
 
-        <Button x:Name="stop_button" Content="stop" Grid.Column="2" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8" Grid.Row="1" Style="{DynamicResource playButton}" VerticalAlignment="Bottom" Width="20" Click="stopButton_Click"/>
-        <Border BorderBrush="Gray" CornerRadius="3,3,3,3" BorderThickness="2,2,2,2" Grid.Row="1" Grid.Column="3">
+        <Border BorderBrush="Gray" CornerRadius="3,3,3,3" BorderThickness="2,2,2,2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
             <Border.Background>
                 <ImageBrush ImageSource="/Images/pg278q_taskbar_vertical_bars_notvisible.png" Stretch="UniformToFill"/>
 
             </Border.Background>
-            <StackPanel Grid.Row="1" Grid.Column="3" >
+            <StackPanel >
 
-                <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" ><Run Text="test"/></TextBlock>
+                <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" HorizontalAlignment="Stretch" ><Run Text="test"/></TextBlock>
                 <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" Text="{Binding CurrentStation.Name}" ></TextBlock>
             </StackPanel>
         </Border>
-        <StackPanel x:Name="volumeStack" Grid.Row="1" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SizeChanged="StackPanel_SizeChanged">
-            <Slider x:Name="volumeSlider" Orientation="Vertical"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Value="0" TickPlacement="TopLeft" TickFrequency="0.1"/>
+        <Button x:Name="play_button" Content="play" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8"  Style="{DynamicResource playButton}" VerticalAlignment="Bottom"   Click="playButton_Click"/>
+        <Button x:Name="pause_button"  Content="Pause" HorizontalAlignment="Center" Grid.Column="2"  Grid.Row="3"  VerticalAlignment="Center" Width="auto" Click="pause_button_Click"/>
+
+        <Button x:Name="stop_button" Content="stop" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8"  Style="{DynamicResource playButton}" VerticalAlignment="Bottom"  Click="stopButton_Click"/>
+        <StackPanel x:Name="volumeStack" Grid.Row="3" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Left" SizeChanged="StackPanel_SizeChanged">
+            <Slider x:Name="volumeSlider" Orientation="Vertical"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center" HorizontalAlignment="Center"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1"/>
+           
+
         </StackPanel>
+        <TextBlock x:Name="volumeDisplay"  HorizontalAlignment="Right" Margin="10,5,0,0" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>
         <MediaElement Name="Player" LoadedBehavior="Manual" Source="{Binding CurrentStation.Url}" Volume="0" ></MediaElement>
-        <TextBlock x:Name="volumeDisplay" Grid.Column="5" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>
-    </Grid>
+        </Grid>
 
 </UserControl>

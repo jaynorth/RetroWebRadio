@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using ViewModelsXML.ViewModels;
 
 namespace XMLtest
 {
@@ -14,37 +15,21 @@ namespace XMLtest
     {
         static void Main(string[] args)
         {
-            List<string> stationList = new List<string>();
 
-
-
-
-            string path = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\RadioStations.xml";
-            XDocument doc = XDocument.Load(path);
-
-            List<RadioStation> list = (from s in doc.Descendants("station")
-                        select new RadioStation()
-                        {
-                            Id = (int)s.Element("id"),
-                            Name = (string)s.Element("name"),
-                            Category = (string)s.Element("category"),
-                            Country = (string)s.Element("country"),
-                            Url = (string)s.Element("url")          
-
-                        }).ToList();
-
-            //foreach (var item in list)
+            MainRadioViewModel m = new MainRadioViewModel();
+            //foreach (var item in MainRadioViewModel.StationList)
             //{
-            //    Console.WriteLine(item.Name);
-            //    Console.WriteLine(item.Url);
-            //    Console.WriteLine(item.Country);
+            //    Console.WriteLine(item.Id);
             //}
 
-            foreach (var item in list)
-            {
-                Console.WriteLine(item.ToString());
-            }
+            var query = MainRadioViewModel.StationList.OrderByDescending(t => t.Id).Select(t => t.Id).Take(1);
 
+                       
+
+            foreach (var item in query)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

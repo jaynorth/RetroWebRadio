@@ -59,6 +59,10 @@
       <Project>{7AF07DC2-1637-405A-969D-2CA069AD0D6B}</Project>
       <Name>Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ViewModelsXML\ViewModelsXML.csproj">
+      <Project>{18AC6D82-CB0E-4597-980C-1773256788BF}</Project>
+      <Name>ViewModelsXML</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
