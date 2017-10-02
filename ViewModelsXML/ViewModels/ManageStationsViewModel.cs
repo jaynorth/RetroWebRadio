@@ -42,28 +42,27 @@ namespace ViewModelsXML.ViewModels
         {
             string[] fileEntries = Directory.GetFiles(directoryPath, "*.xml");
 
+            string fileName;
             string s = "";
             int i = 1;
 
             foreach (var item in fileEntries)
             {
-                s += i.ToString() + ") " + item +'\n';
+                fileName = Path.GetFileName(item);
+                s += i.ToString() + ") " + fileName +'\n';
                 i++;
             }
 
-            // MessageBox.Show("The following " + fileEntries.Count() + " files will be processed :" +'\n' + s);
+            MessageBox.Show("The following " + fileEntries.Count() + " files will be processed :" +'\n' + s);
 
-            string fileName;
+            
             string xmlString;
             string destinationFile;
             string destinationDir = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\Processed";
             foreach (var item in fileEntries)
             {
                 //convert file to string
-
                 xmlString = File.ReadAllText(item);
-                MessageBox.Show(xmlString);
-
 
                 //Process to List and update
                XMLtolist(xmlString);
@@ -71,11 +70,12 @@ namespace ViewModelsXML.ViewModels
                 //Move file to Processed Folder
                     //GetsFileName
                     fileName = Path.GetFileName(item);
+                    // Processed Folder + filename
                    destinationFile = destinationDir + @"\" + fileName;
-                //Move File
+                    //Move File
                     File.Move(item, destinationFile);
 
-
+                //Clear String (optional)
                 xmlString = "";
 
             }
