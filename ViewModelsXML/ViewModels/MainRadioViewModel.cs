@@ -35,7 +35,7 @@ namespace ViewModelsXML.ViewModels
             List<RadioStation> list = (from station in doc.Descendants("station")
                                        select new RadioStation()
                                        {
-                                         //  Id = (int)station.Element("id"),
+                                         Id = (int)station.Attribute("id"),
                                            Name = (string)station.Element("name"),
                                            Category = (string)station.Element("category"),
                                            Country = (string)station.Element("country"),

@@ -3,74 +3,56 @@
 <stations>
   <station id="10">
     <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
-    <name>70s-90s J-pop Stream</name>
-    <category>Japanese Pop</category>
+    <name>Oldiesradio RGR</name>
+    <category></category>
     <country></country>
   </station>
   <station id="11">
     <url>http://199.58.160.146:8006/</url>
-    <name>Pure Rock FM 89/WONC</name>
-    <category>Rock</category>
+    <name>Psychedelicized Radio</name>
+    <category></category>
     <country></country>
   </station>
   <station id="12">
     <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
-    <name>Miba-Piano: Piano Improvisation</name>
-    <category>Piano</category>
+    <name>GLT Jazz Radio</name>
+    <category></category>
     <country></country>
   </station>
   <station id="13">
-    <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
-    <name>Oldiesradio RGR</name>
-    <category>Oldies</category>
-    <country></country>
+    <url>http://mozart.wkar.msu.edu:80/wkar-jazz</url>
+    <name>WKAR Jazz</name>
+    <category>Jazz</category>
+    <country>USA</country>
   </station>
   <station id="14">
-    <url>http://199.58.160.146:8006/</url>
-    <name>Psychedelicized Radio</name>
-    <category>Psychedelicized</category>
-    <country></country>
+    <url>http://50.7.77.114:8479/autodj</url>
+    <name>Cyprus Dub Community Radio</name>
+    <category>Reggae</category>
+    <country>Jmaica</country>
   </station>
   <station id="15">
-    <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
-    <name>GLT Jazz Radio</name>
-    <category>Jazz</category>
-    <country></country>
+    <url>http://icecast.radiovox.org:8000/live.mp3</url>
+    <name>RADIOVOX</name>
+    <category>Talk radio</category>
+    <country>Koweit</country>
   </station>
   <station id="16">
-    <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
-    <name>70s-90s J-pop Stream</name>
-    <category>Japanese Pop</category>
-    <country></country>
+    <url>http://40s50s4fun.com:8000/low</url>
+    <name>country alternative 70s</name>
+    <category>country</category>
+    <country>USA</country>
   </station>
   <station id="17">
-    <url>http://199.58.160.146:8006/</url>
-    <name>Pure Rock FM 89/WONC</name>
-    <category>Rock</category>
-    <country></country>
+    <url>http://96.126.107.232:8004</url>
+    <name>World Harmony Mix - Fusion/World/NewAge</name>
+    <category>Ethnic Fusion</category>
+    <country>JAPAN</country>
   </station>
   <station id="18">
-    <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
-    <name>Miba-Piano: Piano Improvisation</name>
-    <category>Piano</category>
-    <country></country>
-  </station>
-  <station id="19">
-    <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
-    <name>70s-90s J-pop Stream</name>
-    <category>Japanese Pop</category>
-    <country>Japan</country>
-  </station>
-  <station id="20">
-    <url>http://199.58.160.146:8006/</url>
-    <name>Pure Rock FM 89/WONC</name>
-    <category>Rock</category>
-    <country>Whateva</country>
-  </station>
-  <station id="21">
-    <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
-    <name>Miba-Piano: Piano Improvisation</name>
-    <category>Piano</category>
-    <country>Whateva</country>
+    <url>http://stream-uk1.radioparadise.com:80/mp3-128</url>
+    <name>Supernova Radio</name>
+    <category>Eclectic gold</category>
+    <country>UK</country>
   </station>
 </stations>

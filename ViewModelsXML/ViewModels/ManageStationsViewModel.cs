@@ -22,7 +22,11 @@ namespace ViewModelsXML.ViewModels
             Browse = new RelayCommand(BrowseForXML);
             Save = new RelayCommand(SaveListToXML);
             ToBeProcessed = new RelayCommand(ProcessFolderToXML);
+
+            CleanList = new RelayCommand(CleanMainList);
         }
+
+       
 
         private void ProcessFolderToXML()
         {
@@ -87,18 +91,14 @@ namespace ViewModelsXML.ViewModels
         public RelayCommand Browse { get; set; }
         public RelayCommand Save{ get; set; }
         public RelayCommand ToBeProcessed { get; set; }
+        public RelayCommand CleanList { get; set; }
+        
 
         public ObservableCollection<RadioStation> RadioList { get; set; }
 
        
 
-        private ObservableCollection<RadioStation> RemoveDuplicatesInList(ObservableCollection<RadioStation> RadioList)
-        {
-            var query = RadioList.GroupBy(x => x.Url.ToUpper()).Select(y => y.First()).ToList();
-            RadioList = new ObservableCollection<RadioStation>(query);
-            return RadioList;
-
-        }
+       
 
         private void BrowseForXML()
         {
@@ -136,6 +136,7 @@ namespace ViewModelsXML.ViewModels
             RadioList = new ObservableCollection<RadioStation>(newlist);
 
             //find existing top Id in Main List
+       
             var topId = MainRadioViewModel.StationList.Max(t => t.Id);
 
             //This will update the list that displays the stations on the main window
@@ -176,11 +177,29 @@ namespace ViewModelsXML.ViewModels
 
         private void SaveListToXML()
         {
-            //MainRadioViewModel.StationList = RemoveDuplicatesInList(MainRadioViewModel.StationList);
+            CleanMainList();
             CreateXmlFromList(MainRadioViewModel.StationList);
             MessageBox.Show("XML File created and saved");
         }
 
+        //private ObservableCollection<RadioStation> RemoveDuplicatesInList(ObservableCollection<RadioStation> RadioList)
+        //{
+        //    var query = RadioList.GroupBy(x => x.Url.ToUpper()).Select(y => y.First()).ToList();
+        //    RadioList = new ObservableCollection<RadioStation>(query);
+        //    return RadioList;
+
+        //}
+
+        private void CleanMainList()
+        {
+            var query = MainRadioViewModel.StationList.GroupBy(x => x.Url.ToUpper()).Select(y => y.Last()).ToList();
+
+            MainRadioViewModel.StationList =  new ObservableCollection<RadioStation>(query);
+
+            MessageBox.Show("Main List cleaned");
+
+            //MainRadioViewModel.StationList.Clear();
+        }
 
     }
 }
