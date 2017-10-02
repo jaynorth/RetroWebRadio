@@ -85,7 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="XML\Processed\" />
-    <Folder Include="XML\ToBeProcessed\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XML\ToBeProcessed\Monday.xml" />
+    <Content Include="XML\ToBeProcessed\test.xml" />
+    <Content Include="XML\ToBeProcessed\Tuesday.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

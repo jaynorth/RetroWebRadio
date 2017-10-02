@@ -9,6 +9,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using ViewModelsXML.ViewModels;
+using System.IO;
 
 namespace XMLtest
 {
@@ -17,21 +18,22 @@ namespace XMLtest
         static void Main(string[] args)
         {
 
-            MainRadioViewModel m = new MainRadioViewModel();
-            //foreach (var item in MainRadioViewModel.StationList)
-            //{
-            //    Console.WriteLine(item.Id);
-            //}
+            //Directory
 
-            var query = MainRadioViewModel.StationList.GroupBy(x => x.Name.ToUpper()).Select(y => y.First()).ToList();
-            ObservableCollection<RadioStation> List = new ObservableCollection<RadioStation>(query);
+            string dirPath = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\ToBeProcessed";
 
-            foreach (var item in List)
+            if (Directory.Exists(dirPath))
             {
-                Console.WriteLine(item.Id);
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.Url);
-                Console.WriteLine("***");
+                ProcessFilesInDirectory(dirPath);
+            }
+        }
+
+        private static void ProcessFilesInDirectory(string directoryPath)
+        {
+            string[] fileEntries = Directory.GetFiles(directoryPath, "*.xml");
+            foreach (var item in fileEntries) 
+            {
+                Console.WriteLine(item);
             }
         }
     }

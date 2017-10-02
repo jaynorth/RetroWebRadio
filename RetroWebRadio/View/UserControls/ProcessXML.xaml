@@ -22,6 +22,10 @@
             <Label Content="Save Updated List to Main XML"></Label>
             <Button Content="SaveToXML" Command="{Binding Save}" Height="Auto"></Button>
         </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+            <Label Content="Save Updated List to Main XML"></Label>
+            <Button Content="Process ToBeProcessed Folder " Command="{Binding ToBeProcessed}" Height="Auto"></Button>
+        </StackPanel>
         
     </Grid>
 </UserControl>
