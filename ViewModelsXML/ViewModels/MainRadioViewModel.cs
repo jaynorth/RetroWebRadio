@@ -16,7 +16,7 @@ using ViewModelsXML.ViewModels.Helpers;
 
 namespace ViewModelsXML.ViewModels
 {
-    public partial class MainRadioViewModel : BaseViewModel
+    public  class MainRadioViewModel : BaseViewModel
     {
         public MainRadioViewModel()
         {
