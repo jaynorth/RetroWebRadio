@@ -3,56 +3,74 @@
 <stations>
   <station id="10">
     <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
-    <name>Oldiesradio RGR</name>
-    <category>Oldies</category>
-    <Country />
+    <name>70s-90s J-pop Stream</name>
+    <category>Japanese Pop</category>
+    <country></country>
   </station>
   <station id="11">
     <url>http://199.58.160.146:8006/</url>
-    <name>Psychedelicized Radio</name>
-    <category>Psychedelicized</category>
-    <Country />
+    <name>Pure Rock FM 89/WONC</name>
+    <category>Rock</category>
+    <country></country>
   </station>
   <station id="12">
     <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
-    <name>GLT Jazz Radio</name>
-    <category>Jazz</category>
-    <Country />
+    <name>Miba-Piano: Piano Improvisation</name>
+    <category>Piano</category>
+    <country></country>
   </station>
   <station id="13">
     <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
-    <name>70s-90s J-pop Stream</name>
-    <category>Japanese Pop</category>
-    <Country />
+    <name>Oldiesradio RGR</name>
+    <category>Oldies</category>
+    <country></country>
   </station>
   <station id="14">
     <url>http://199.58.160.146:8006/</url>
-    <name>Pure Rock FM 89/WONC</name>
-    <category>Rock</category>
-    <Country />
+    <name>Psychedelicized Radio</name>
+    <category>Psychedelicized</category>
+    <country></country>
   </station>
   <station id="15">
     <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
-    <name>Miba-Piano: Piano Improvisation</name>
-    <category>Piano</category>
-    <Country />
+    <name>GLT Jazz Radio</name>
+    <category>Jazz</category>
+    <country></country>
   </station>
   <station id="16">
     <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
     <name>70s-90s J-pop Stream</name>
     <category>Japanese Pop</category>
-    <Country>Japan</Country>
+    <country></country>
   </station>
   <station id="17">
     <url>http://199.58.160.146:8006/</url>
     <name>Pure Rock FM 89/WONC</name>
     <category>Rock</category>
-    <Country>Whateva</Country>
+    <country></country>
   </station>
   <station id="18">
     <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
     <name>Miba-Piano: Piano Improvisation</name>
     <category>Piano</category>
-    <Country>Whateva</Country>
+    <country></country>
+  </station>
+  <station id="19">
+    <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
+    <name>70s-90s J-pop Stream</name>
+    <category>Japanese Pop</category>
+    <country>Japan</country>
+  </station>
+  <station id="20">
+    <url>http://199.58.160.146:8006/</url>
+    <name>Pure Rock FM 89/WONC</name>
+    <category>Rock</category>
+    <country>Whateva</country>
+  </station>
+  <station id="21">
+    <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
+    <name>Miba-Piano: Piano Improvisation</name>
+    <category>Piano</category>
+    <country>Whateva</country>
   </station>
 </stations>

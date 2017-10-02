@@ -50,6 +50,7 @@ namespace ViewModelsXML.ViewModels
                 Id++;
             }
 
+     
             StationList = new ObservableCollection<RadioStation>(list);
         }
 

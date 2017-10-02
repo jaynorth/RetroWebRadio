@@ -1,6 +1,7 @@
 ﻿using Models.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +23,15 @@ namespace XMLtest
             //    Console.WriteLine(item.Id);
             //}
 
-            var query = MainRadioViewModel.StationList.OrderByDescending(t => t.Id).Select(t => t.Id).Take(1);
+            var query = MainRadioViewModel.StationList.GroupBy(x => x.Name.ToUpper()).Select(y => y.First()).ToList();
+            ObservableCollection<RadioStation> List = new ObservableCollection<RadioStation>(query);
 
-                       
-
-            foreach (var item in query)
+            foreach (var item in List)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.Id);
+                Console.WriteLine(item.Name);
+                Console.WriteLine(item.Url);
+                Console.WriteLine("***");
             }
         }
     }

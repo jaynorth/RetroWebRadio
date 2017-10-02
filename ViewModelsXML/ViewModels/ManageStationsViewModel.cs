@@ -28,37 +28,13 @@ namespace ViewModelsXML.ViewModels
 
         public ObservableCollection<RadioStation> RadioList { get; set; }
 
-        private void XMLtolist(string xmlFileText)
+       
+
+        private ObservableCollection<RadioStation> RemoveDuplicatesInList(ObservableCollection<RadioStation> RadioList)
         {
-
-            XDocument doc = XDocument.Parse(xmlFileText);
-
-            List<RadioStation> newlist = (from station in doc.Descendants("station")
-                                          select new RadioStation()
-                                          {
-                                              //  Id = (int)station.Element("id"),
-                                              Name = (string)station.Element("name"),
-                                              Category = (string)station.Element("category"),
-                                              Country = (string)station.Element("country"),
-                                              Url = (string)station.Element("url")
-
-                                          }).ToList();
-            RadioList = new ObservableCollection<RadioStation>(newlist);
-
-            //find existing top Id in List
-            var topId = MainRadioViewModel.StationList.Max(t => t.Id);
-
-            //This will update the list that displays the stations on the main window
-            foreach (var item in RadioList)
-            {
-                item.Id = topId + 1;
-                MainRadioViewModel.StationList.Add(item);
-                topId++;
-            }
-
-            
-
-
+            var query = RadioList.GroupBy(x => x.Url.ToUpper()).Select(y => y.First()).ToList();
+            RadioList = new ObservableCollection<RadioStation>(query);
+            return RadioList;
 
         }
 
@@ -80,7 +56,40 @@ namespace ViewModelsXML.ViewModels
             }
         }
 
-        private void CreateXmlFromList(ObservableCollection<RadioStation> MainRadioslist)
+        private void XMLtolist(string xmlFileText)
+        {
+
+            XDocument doc = XDocument.Parse(xmlFileText);
+
+            List<RadioStation> newlist = (from station in doc.Descendants("station")
+                                          select new RadioStation()
+                                          {
+                                              //  Id = (int)station.Element("id"),
+                                              Name = (string)station.Element("name"),
+                                              Category = (string)station.Element("category"),
+                                              Country = (string)station.Element("country"),
+                                              Url = (string)station.Element("url")
+
+                                          }).ToList();
+            RadioList = new ObservableCollection<RadioStation>(newlist);
+
+            //find existing top Id in Main List
+            var topId = MainRadioViewModel.StationList.Max(t => t.Id);
+
+            //This will update the list that displays the stations on the main window
+            foreach (var item in RadioList)
+            {
+                item.Id = topId + 1;
+                MainRadioViewModel.StationList.Add(item);
+                topId++;
+            }
+
+           
+
+         
+
+        }
+        private void CreateXmlFromList(ObservableCollection<RadioStation> MainRadiolist)
         {
             XDocument Xmldoc = new XDocument(
                 
@@ -90,12 +99,12 @@ namespace ViewModelsXML.ViewModels
 
                 new XElement("stations",
 
-                    from station in MainRadioslist
+                    from station in MainRadiolist
                     select new XElement("station", new XAttribute("id", station.Id),
                             new XElement("url", station.Url),
                             new XElement("name", station.Name),
                             new XElement("category", station.Category),
-                            new XElement("Country", station.Country))
+                            new XElement("country", station.Country))
 
 
                 ));
@@ -105,6 +114,7 @@ namespace ViewModelsXML.ViewModels
 
         private void SaveListToXML()
         {
+            //MainRadioViewModel.StationList = RemoveDuplicatesInList(MainRadioViewModel.StationList);
             CreateXmlFromList(MainRadioViewModel.StationList);
             MessageBox.Show("XML File created and saved");
         }
