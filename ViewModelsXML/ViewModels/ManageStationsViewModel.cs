@@ -24,6 +24,11 @@ namespace ViewModelsXML.ViewModels
             ToBeProcessed = new RelayCommand(ProcessFolderToXML);
 
             CleanList = new RelayCommand(CleanMainList);
+
+            MainRadioViewModel MainRadioVM = new MainRadioViewModel();
+
+            ObservableCollection<RadioStation> StationList = MainRadioVM.StationList;
+            
         }
 
        
@@ -136,14 +141,16 @@ namespace ViewModelsXML.ViewModels
             RadioList = new ObservableCollection<RadioStation>(newlist);
 
             //find existing top Id in Main List
-       
-            var topId = MainRadioViewModel.StationList.Max(t => t.Id);
+
+            //var topId = MainRadioViewModel.StationList.Max(t => t.Id);
+            var topId = StationList.Max(t => t.Id);
 
             //This will update the list that displays the stations on the main window
             foreach (var item in RadioList)
             {
                 item.Id = topId + 1;
-                MainRadioViewModel.StationList.Add(item);
+                //MainRadioViewModel.StationList.Add(item);
+                StationList.Add(item);
                 topId++;
             }
 
@@ -178,7 +185,7 @@ namespace ViewModelsXML.ViewModels
         private void SaveListToXML()
         {
             CleanMainList();
-            CreateXmlFromList(MainRadioViewModel.StationList);
+            CreateXmlFromList(MainradioVM.StationList);
             MessageBox.Show("XML File created and saved");
         }
 
@@ -192,9 +199,9 @@ namespace ViewModelsXML.ViewModels
 
         private void CleanMainList()
         {
-            var query = MainRadioViewModel.StationList.GroupBy(x => x.Url.ToUpper()).Select(y => y.Last()).ToList();
+            var query = Main.StationList.GroupBy(x => x.Url.ToUpper()).Select(y => y.Last()).ToList();
 
-            MainRadioViewModel.StationList =  new ObservableCollection<RadioStation>(query);
+            MainRadioViewModel.Instance.StationList =  new ObservableCollection<RadioStation>(query);
 
             MessageBox.Show("Main List cleaned");
 

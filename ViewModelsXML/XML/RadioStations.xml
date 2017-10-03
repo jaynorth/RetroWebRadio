@@ -14,45 +14,39 @@
     <country></country>
   </station>
   <station id="12">
-    <url>http://wgltradio.ilstu.edu:8000/wgltjazz.mp3</url>
-    <name>GLT Jazz Radio</name>
-    <category></category>
-    <country></country>
-  </station>
-  <station id="22">
-    <url>http://mozart.wkar.msu.edu:80/wkar-jazz</url>
-    <name>WKAR Jazz</name>
-    <category>Jazz</category>
-    <country>USA</country>
-  </station>
-  <station id="23">
-    <url>http://50.7.77.114:8479/autodj</url>
-    <name>Cyprus Dub Community Radio</name>
-    <category>Reggae</category>
-    <country>Jmaica</country>
-  </station>
-  <station id="24">
-    <url>http://icecast.radiovox.org:8000/live.mp3</url>
-    <name>RADIOVOX</name>
-    <category>Talk radio</category>
-    <country>Koweit</country>
-  </station>
-  <station id="19">
     <url>http://40s50s4fun.com:8000/low</url>
     <name>country alternative 70s</name>
     <category>country</category>
     <country>USA</country>
   </station>
-  <station id="20">
+  <station id="13">
     <url>http://96.126.107.232:8004</url>
     <name>World Harmony Mix - Fusion/World/NewAge</name>
     <category>Ethnic Fusion</category>
     <country>JAPAN</country>
   </station>
-  <station id="21">
+  <station id="14">
     <url>http://stream-uk1.radioparadise.com:80/mp3-128</url>
     <name>Supernova Radio</name>
     <category>Eclectic gold</category>
     <country>UK</country>
+  </station>
+  <station id="15">
+    <url>http://mozart.wkar.msu.edu:80/wkar-jazz</url>
+    <name>WKAR Jazz</name>
+    <category>Jazz</category>
+    <country>USA</country>
+  </station>
+  <station id="16">
+    <url>http://50.7.77.114:8479/autodj</url>
+    <name>Cyprus Dub Community Radio</name>
+    <category>Reggae</category>
+    <country>Jmaica</country>
+  </station>
+  <station id="17">
+    <url>http://icecast.radiovox.org:8000/live.mp3</url>
+    <name>RADIOVOX</name>
+    <category>Talk radio</category>
+    <country>Koweit</country>
   </station>
 </stations>

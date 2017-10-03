@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="ViewModels\Helpers\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainRadioViewModel.cs" />
-    <Compile Include="ViewModels\ManageStationsViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>

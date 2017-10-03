@@ -25,9 +25,7 @@ namespace RetroWebRadio.View.UserControls
         {
             InitializeComponent();
 
-            ManageStationsViewModel msvm = new ManageStationsViewModel();
-
-            DataContext = msvm;
+     
         }
     }
 }
