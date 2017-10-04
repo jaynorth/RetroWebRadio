@@ -14,7 +14,7 @@
         
         
         
-        <TabControl>
+        <!--<TabControl>
             <TabItem Header="Main">
                 <Grid ShowGridLines="True">
                     <Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                     
                 </userControls:ProcessXML>
             </TabItem>
-        </TabControl>
+        </TabControl>-->
        
     </Grid>
 </Window>
