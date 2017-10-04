@@ -11,7 +11,7 @@ namespace ViewModelsXML.ViewModels.Helpers
     public class BaseViewModel : INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

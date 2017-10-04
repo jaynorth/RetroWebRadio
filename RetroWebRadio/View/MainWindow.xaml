@@ -8,6 +8,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900" MinWidth="700" MinHeight="500">
     <Grid ShowGridLines="True" >
+        
+        
+        
+        
+        
+        
         <TabControl>
             <TabItem Header="Main">
                 <Grid ShowGridLines="True">

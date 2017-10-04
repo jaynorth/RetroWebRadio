@@ -1,49 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Main List of Radio Stations XML-->
 <stations>
-  <station id="10">
+  <station id="18">
     <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
     <name>Oldiesradio RGR</name>
-    <category></category>
+    <category>Oldies</category>
     <country></country>
   </station>
-  <station id="11">
+  <station id="19">
     <url>http://199.58.160.146:8006/</url>
     <name>Psychedelicized Radio</name>
-    <category></category>
+    <category>Psychedelic</category>
     <country></country>
   </station>
-  <station id="12">
+  <station id="20">
     <url>http://40s50s4fun.com:8000/low</url>
     <name>country alternative 70s</name>
     <category>country</category>
     <country>USA</country>
   </station>
-  <station id="13">
+  <station id="21">
     <url>http://96.126.107.232:8004</url>
     <name>World Harmony Mix - Fusion/World/NewAge</name>
     <category>Ethnic Fusion</category>
     <country>JAPAN</country>
   </station>
-  <station id="14">
+  <station id="22">
     <url>http://stream-uk1.radioparadise.com:80/mp3-128</url>
     <name>Supernova Radio</name>
     <category>Eclectic gold</category>
     <country>UK</country>
   </station>
-  <station id="15">
+  <station id="23">
     <url>http://mozart.wkar.msu.edu:80/wkar-jazz</url>
     <name>WKAR Jazz</name>
     <category>Jazz</category>
     <country>USA</country>
   </station>
-  <station id="16">
+  <station id="24">
     <url>http://50.7.77.114:8479/autodj</url>
     <name>Cyprus Dub Community Radio</name>
     <category>Reggae</category>
     <country>Jmaica</country>
   </station>
-  <station id="17">
+  <station id="25">
     <url>http://icecast.radiovox.org:8000/live.mp3</url>
     <name>RADIOVOX</name>
     <category>Talk radio</category>
