@@ -10,32 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml;
-using RetroWebRadio.Properties;
 using ViewModelsXML.ViewModels;
-using Models.Model;
 
-namespace RetroWebRadio.View.UserControls
+namespace RetroWebRadio.View
 {
     /// <summary>
-    /// Logique d'interaction pour RadioLists.xaml
+    /// Logique d'interaction pour MainWindowView.xaml
     /// </summary>
-    public partial class RadioLists : UserControl
+    public partial class MainWindowView : Window
     {
-
-        
-
-        public RadioLists()
+        public MainWindowView()
         {
+            
+            DataContext = new MainRadioViewModel();
             InitializeComponent();
 
-           
-           
-
         }
-
-        
     }
 }
