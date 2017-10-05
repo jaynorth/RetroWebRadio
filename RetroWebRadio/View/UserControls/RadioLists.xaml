@@ -5,24 +5,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RetroWebRadio.View.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             MinWidth="400"
+             >
     <UserControl.Resources>
 
         <Style  TargetType="{x:Type DataGrid}">
 
             <Setter Property="Foreground" Value="GreenYellow" />
-            <Setter Property="Background" Value="Red"></Setter>
-            
+            <!--<Setter Property="Background" Value="Red"></Setter>-->
+
 
         </Style>
         <Style  TargetType="{x:Type DataGridCell}" >
-            <Setter Property="Margin" Value="10, 0, 10, 0"></Setter>
+            <Setter Property="Margin" Value="5, 0, 0, 5"></Setter>
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Foreground" Value="Yellow"></Setter>
                     <Setter Property="Background" Value="transparent"></Setter>
                     <Setter Property="BorderBrush" Value="Transparent"></Setter>
-                    <Setter Property="FontWeight" Value="Bold"></Setter>                    
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -30,27 +33,30 @@
             <Setter Property="Foreground" Value="GreenYellow"></Setter>
             <Setter Property="FontWeight" Value="Bold"></Setter>
             <Setter Property="Background" Value="Transparent"></Setter>
-            <Setter Property="Margin" Value="10, 10, 10, 15"></Setter>
+            <Setter Property="Margin" Value="0, 9, 0, 20"></Setter>
         </Style>
-       
+
+
 
     </UserControl.Resources>
-    <Grid>
+
+    <Grid >
+        
         <Grid.Background>
 
-            <ImageBrush ImageSource="/Images/canstock26763900.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\8158_original (1).png"  />
 
 
         </Grid.Background>
-        
-
-        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" RowHeaderWidth="0" >
+        <!--<Rectangle Stroke="gray" StrokeThickness="6"  Stretch="UniformToFill" RadiusX="10" RadiusY="20"></Rectangle>-->
+       
+        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" RowHeaderWidth="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridLinesVisibility="None"  BorderBrush="Transparent" BorderThickness="0" Margin="20" >
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}" >
+                <!--<DataGridTextColumn Header="Id" Binding="{Binding Id}" >
 
-                </DataGridTextColumn>
+                </DataGridTextColumn>-->
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" >
-                    
+
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Category" Binding="{Binding Category}">
 

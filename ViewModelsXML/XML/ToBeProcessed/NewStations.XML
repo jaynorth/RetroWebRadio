@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Main List of Radio Stations XML-->
+<stations>
+  <station id="18">
+    <url>http://uplink.intronic.nl/rgrfm_oldiesradio</url>
+    <name>Oldiesradio RGR</name>
+    <category>Oldies</category>
+    <country></country>
+  </station>
+  <station id="19">
+    <url>http://199.58.160.146:8006/</url>
+    <name>Psychedelicized Radio</name>
+    <category>Psychedelic</category>
+    <country></country>
+  </station>
+  <station id="20">
+    <url>http://40s50s4fun.com:8000/low</url>
+    <name>country alternative 70s</name>
+    <category>country</category>
+    <country>USA</country>
+  </station>

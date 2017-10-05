@@ -46,6 +46,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tools\RatioConverter.cs" />
     <Compile Include="ViewModels\Helpers\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainRadioViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -74,6 +75,7 @@
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
