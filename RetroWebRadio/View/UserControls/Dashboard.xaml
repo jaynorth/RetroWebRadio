@@ -1,13 +1,22 @@
-﻿<UserControl x:Class="RetroWebRadio.View.UserControls.Dashboard"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RetroWebRadio.View.UserControls"
+              x:Class="RetroWebRadio.View.UserControls.Dashboard"
              mc:Ignorable="d" 
-             d:DesignHeight="70" d:DesignWidth="400">
+             d:DesignHeight="800" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style x:Key="RedGreenRadio"  TargetType="{x:Type RadioButton}">
+
+        <!--<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Assets/DictionaryTest.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>-->
+
+
+        <!--<Style x:Key="RedGreenRadio"  TargetType="{x:Type RadioButton}">
             <Style.Triggers>
                 <Trigger Property="IsChecked" Value="true">
                     <Setter Property = "Background" Value="Green"/>
@@ -35,39 +44,38 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>-->
     </UserControl.Resources>
 
 
 
     <Grid ShowGridLines="True"  >
         <Grid.Background>
-            
+
             <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
             <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\textures_28.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="5*"/>
 
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition  Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-            <ColumnDefinition Width="50" ></ColumnDefinition>
-            <ColumnDefinition Width="10" ></ColumnDefinition>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition  Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="10" />
 
         </Grid.ColumnDefinitions>
 
-        <RadioButton x:Name="RadioOff" Style="{StaticResource RedGreenRadio}"  Grid.Row="3" Grid.Column="1" IsChecked="False" HorizontalAlignment="Left" >
-
-        </RadioButton>
+        <RadioButton x:Name="RadioOff"   Grid.Row="3" Grid.Column="1" IsChecked="False" HorizontalAlignment="Left" />
 
 
         <Border BorderBrush="Gray" CornerRadius="3,3,3,3" BorderThickness="2,2,2,2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
@@ -78,20 +86,24 @@
             <StackPanel >
 
                 <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" HorizontalAlignment="Stretch" ><Run Text="test"/></TextBlock>
-                <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" Text="{Binding CurrentStation.Name}" ></TextBlock>
+                <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" ><InlineUIContainer/><InlineUIContainer>
+                        
+                    </InlineUIContainer><InlineUIContainer/></TextBlock>
             </StackPanel>
         </Border>
-        <Button x:Name="play_button" Content="play" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8"  Style="{DynamicResource playButton}" VerticalAlignment="Bottom"   Click="playButton_Click"/>
-        <Button x:Name="pause_button"  Content="Pause" HorizontalAlignment="Center" Grid.Column="2"  Grid.Row="3"  VerticalAlignment="Center" Width="auto" Click="pause_button_Click"/>
+        <Button x:Name="play_button" Style="{DynamicResource ButtonStyle1}" Content="play" Grid.Column="1" Grid.Row="3"        Click="playButton_Click" />
+        <Button x:Name="pause_button"  Content="Pause" HorizontalAlignment="Center" Grid.Column="2"  Grid.Row="3"  VerticalAlignment="Center" Width="auto" Click="pause_button_Click"  Background="#FFDDDDDD" Style="{DynamicResource PauseStyle}"/>
 
-        <Button x:Name="stop_button" Content="stop" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8"  Style="{DynamicResource playButton}" VerticalAlignment="Bottom"  Click="stopButton_Click"/>
-        <StackPanel x:Name="volumeStack" Grid.Row="3" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Left" SizeChanged="StackPanel_SizeChanged">
-            <Slider x:Name="volumeSlider" Orientation="Vertical"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center" HorizontalAlignment="Center"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1"/>
-           
+        <Button x:Name="stop_button" Content="stop" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8"   VerticalAlignment="Bottom"  Click="stopButton_Click"/>
 
-        </StackPanel>
-        <TextBlock x:Name="volumeDisplay"  HorizontalAlignment="Right" Margin="10,5,0,0" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>
-        <MediaElement Name="Player" LoadedBehavior="Manual" Source="{Binding CurrentStation.Url}" Volume="0" ></MediaElement>
+        <Button x:Name="button" Content="Button"  Grid.Column="4" Grid.Row="3" Style="{DynamicResource ButtonStyle1}"/>
+        <!--</StackPanel>-->
+        <!--<StackPanel x:Name="volumeStack" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Left" >-->
+        <Slider x:Name="volumeSlider" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Orientation="Horizontal"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center" HorizontalAlignment="Center"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1" Width="400"/>
+
+
+        <!--<TextBlock x:Name="volumeDisplay"  HorizontalAlignment="Right" Margin="10,5,0,0" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>-->
+        <MediaElement x:Name="Player" LoadedBehavior="Manual" Source="{Binding CurrentStation.Url}" Volume="0" />
         </Grid>
 
 </UserControl>

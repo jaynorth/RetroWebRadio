@@ -48,8 +48,8 @@
   <ItemGroup>
     <Compile Include="Tools\RatioConverter.cs" />
     <Compile Include="ViewModels\Helpers\BaseViewModel.cs" />
-    <Compile Include="ViewModels\MainRadioViewModelV2.cs" />
     <Compile Include="ViewModels\MainRadioViewModel.cs" />
+    <Compile Include="ViewModels\MainRadioViewModelV2.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>

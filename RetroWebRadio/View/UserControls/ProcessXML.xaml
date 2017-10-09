@@ -6,29 +6,32 @@
              xmlns:local="clr-namespace:RetroWebRadio.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+       
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
       
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <StackPanel Grid.Row="0" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Browse for an XML File"></Label>
             <Button Content="Browse" Command="{Binding Browse}" Height="Auto"></Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Save Updated List to Main XML"></Label>
             <Button Content="SaveToXML" Command="{Binding Save}" Height="Auto"></Button>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <StackPanel Grid.Row="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Process Files in To Be Processed Folder"></Label>
             <Button Content="Process ToBeProcessed Folder " Command="{Binding ToBeProcessed}" Height="Auto"></Button>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Clean up List"></Label>
             <Button Content="Clean" Command="{Binding CleanList}" Height="Auto"></Button>
         </StackPanel>
