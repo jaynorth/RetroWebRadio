@@ -57,9 +57,9 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="45*"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="5*"/>
 
@@ -91,16 +91,16 @@
                     </InlineUIContainer><InlineUIContainer/></TextBlock>
             </StackPanel>
         </Border>
-        <Button x:Name="play_button" Style="{DynamicResource ButtonStyle1}" Content="play" Grid.Column="1" Grid.Row="3"        Click="playButton_Click" />
-        <Button x:Name="pause_button"  Content="Pause" HorizontalAlignment="Center" Grid.Column="2"  Grid.Row="3"  VerticalAlignment="Center" Width="auto" Click="pause_button_Click"  Background="#FFDDDDDD" Style="{DynamicResource PauseStyle}"/>
+        <Button x:Name="play_button"  Content="play" Grid.Column="1" Grid.Row="3"        Click="playButton_Click" />
+        <Button x:Name="pause_button"  Content="Pause"  Grid.Column="2"  Grid.Row="3"   Click="pause_button_Click"  Background="#FFDDDDDD" />
 
-        <Button x:Name="stop_button" Content="stop" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Height="20" Margin="0,0,0,8"   VerticalAlignment="Bottom"  Click="stopButton_Click"/>
+        <Button x:Name="stop_button" Content="stop" Grid.Column="3" Grid.Row="3"   Click="stopButton_Click"/>
 
-        <Button x:Name="button" Content="Button"  Grid.Column="4" Grid.Row="3" Style="{DynamicResource ButtonStyle1}"/>
-        <!--</StackPanel>-->
-        <!--<StackPanel x:Name="volumeStack" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Left" >-->
-        <Slider x:Name="volumeSlider" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Orientation="Horizontal"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center" HorizontalAlignment="Center"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1" Width="400"/>
+             <Label Content="Volume" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1"></Label>
+        <Slider x:Name="volumeSlider"  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center"  HorizontalAlignment="Stretch" Width="Auto"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1" />
 
+       
+        
 
         <!--<TextBlock x:Name="volumeDisplay"  HorizontalAlignment="Right" Margin="10,5,0,0" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>-->
         <MediaElement x:Name="Player" LoadedBehavior="Manual" Source="{Binding CurrentStation.Url}" Volume="0" />
