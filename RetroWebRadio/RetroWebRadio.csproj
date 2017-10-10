@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -62,11 +63,8 @@
     <Compile Include="View\MainWindowViewV2.xaml.cs">
       <DependentUpon>MainWindowViewV2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainWindowView.xaml.cs">
-      <DependentUpon>MainWindowView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControls\ButtonsUC.xaml.cs">
-      <DependentUpon>ButtonsUC.xaml</DependentUpon>
+    <Compile Include="View\testWindow.xaml.cs">
+      <DependentUpon>testWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
@@ -77,27 +75,27 @@
     <Compile Include="View\UserControls\RadioLists.xaml.cs">
       <DependentUpon>RadioLists.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="AgainDic.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlayerStylesDic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestDic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\MainWindowViewV2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MainWindowView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\ButtonsUC.xaml">
+    <Page Include="View\testWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,7 +8,11 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Assets/DictionaryTest.xaml"></ResourceDictionary>
+                <!--<ResourceDictionary Source="Assets/DictionaryTest.xaml"></ResourceDictionary>-->
+                <ResourceDictionary Source="PlayerStylesDic.xaml"/>
+                <ResourceDictionary Source="TestDic.xaml"/>
+
+                <ResourceDictionary Source="AgainDic.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
        

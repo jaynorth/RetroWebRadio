@@ -21,11 +21,46 @@ namespace RetroWebRadio.View.UserControls
     /// </summary>
     public partial class ProcessXML : UserControl
     {
+        
+
         public ProcessXML()
         {
             InitializeComponent();
 
-     
+            
+
+        }
+
+        private void dropfiles(object sender, DragEventArgs e)
+        {
+
+
+            string[] droppedFiles = null;
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                droppedFiles = e.Data.GetData(DataFormats.FileDrop, true) as string[];
+            }
+
+            if ((null == droppedFiles) || (!droppedFiles.Any())) { return; }
+
+            var myVM = DataContext as MainRadioViewModel;
+
+            // myVM.DroppedItems.Clear();
+
+
+            //foreach (string s in droppedFiles)
+            //{
+            //    myVM.DroppedItems.Add(s);
+            //}
+
+            myVM.DoFileDrop(droppedFiles);
+
+
+
+
+
+
         }
     }
 }

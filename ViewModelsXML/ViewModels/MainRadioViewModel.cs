@@ -16,17 +16,68 @@ using ViewModelsXML.ViewModels.Helpers;
 
 namespace ViewModelsXML.ViewModels
 {
-    public  class MainRadioViewModel : BaseViewModel
+    public class MainRadioViewModel : BaseViewModel
     {
         public MainRadioViewModel()
         {
             LoadXML();
             _currentStation = StationList.FirstOrDefault();
+       
+            dirPath = @"..\..\..\ViewModelsXML\XML\ToBeProcessed";
+            _fileList = new ObservableCollection<string>();
+            GetFileListInDirectory(dirPath);
+            _droppedItems = new ObservableCollection<string>();
+
+            InitCommands();
+
+        }
+
+        private void InitCommands()
+        {
+            AddItems = new RelayCommand(AddDropped);
             Browse = new RelayCommand(BrowseForXML);
             Save = new RelayCommand(SaveListToXML);
             ToBeProcessed = new RelayCommand(ProcessFolderToXML);
             CleanList = new RelayCommand(CleanMainList);
-        
+        }
+
+        public RelayCommand AddItems { get; set; }
+        public RelayCommand Browse { get; set; }
+        public RelayCommand Save { get; set; }
+        public RelayCommand ToBeProcessed { get; set; }
+        public RelayCommand CleanList { get; set; }
+
+
+        public void DoFileDrop(IEnumerable<String> filePaths)
+        {
+
+            foreach (var item in filePaths)
+            {
+                if (Path.GetExtension(item).ToUpper() == ".XML")
+                {
+                    DroppedItems.Add(item);
+                }
+
+                else
+                {
+                    MessageBox.Show(item + " is not an XML file");
+                }
+            }
+
+        }
+
+
+        private ObservableCollection<string> _droppedItems;
+
+        public ObservableCollection<string> DroppedItems
+        {
+            get { return _droppedItems; }
+            set
+            {
+                _droppedItems = value;
+
+                OnPropertyChanged();
+            }
         }
 
         private ObservableCollection<RadioStation> _stationList;
@@ -42,11 +93,12 @@ namespace ViewModelsXML.ViewModels
         }
 
         private RadioStation _currentStation;
-                    
-        public RadioStation    CurrentStation
+
+        public RadioStation CurrentStation
         {
             get { return _currentStation; }
-            set {
+            set
+            {
 
                 _currentStation = value;
                 OnPropertyChanged();
@@ -54,17 +106,17 @@ namespace ViewModelsXML.ViewModels
             }
         }
 
-        public RelayCommand Browse { get; set; }
-        public RelayCommand Save { get; set; }
-        public RelayCommand ToBeProcessed { get; set; }
-        public RelayCommand CleanList { get; set; }
-
+       
         public ObservableCollection<RadioStation> RadioList { get; set; }
 
 
         private void LoadXML()
         {
-            string path = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\RadioStations.xml";
+            
+            //Below Relative Path
+            string path = "../../../ViewModelsXML/XML/RadioStations.xml";
+
+
             XDocument doc = XDocument.Load(path);
 
             List<RadioStation> list = (from station in doc.Descendants("station")
@@ -88,11 +140,10 @@ namespace ViewModelsXML.ViewModels
             StationList = new ObservableCollection<RadioStation>(list);
         }
 
-
+        public string dirPath { get; set; }
         private void ProcessFolderToXML()
         {
-            string dirPath = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\ToBeProcessed";
-
+ 
             if (Directory.Exists(dirPath))
             {
                 ProcessFilesInDirectory(dirPath);
@@ -101,6 +152,47 @@ namespace ViewModelsXML.ViewModels
             {
                 MessageBox.Show("No XML Files in this Directory: " + dirPath);
             }
+        }
+
+        private ObservableCollection<string> GetFileListInDirectory(string dirPath)
+        {
+            string[] fileEntries = Directory.GetFiles(dirPath, "*.xml");
+            string fileName;
+
+            foreach (var item in fileEntries)
+            {
+                fileName = Path.GetFileName(item);
+                _fileList.Add(fileName);
+            }
+
+            return _fileList;
+        }
+
+        private ObservableCollection<string> _fileList;
+
+        public ObservableCollection<string> FileList
+        {
+            get { return _fileList; }
+            set
+            {
+                _fileList = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+        private void AddDropped()
+        {
+
+            string xmlString;
+            foreach (var item in _droppedItems)
+            {
+                //Process file
+                xmlString = File.ReadAllText(item);
+                XMLtolist(xmlString);
+            }
+
+            DroppedItems.Clear();
         }
 
         private void ProcessFilesInDirectory(string directoryPath)
@@ -123,7 +215,7 @@ namespace ViewModelsXML.ViewModels
 
             string xmlString;
             string destinationFile;
-            string destinationDir = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\Processed";
+            string destinationDir = @"..\..\..\ViewModelsXML\XML\Processed";
             foreach (var item in fileEntries)
             {
                 //convert file to string
@@ -136,6 +228,7 @@ namespace ViewModelsXML.ViewModels
                 //GetsFileName
                 fileName = Path.GetFileName(item);
                 // Processed Folder + filename
+
                 destinationFile = destinationDir + @"\" + fileName;
                 //Move File
                 File.Move(item, destinationFile);
@@ -143,9 +236,11 @@ namespace ViewModelsXML.ViewModels
                 //Clear String (optional)
                 xmlString = "";
 
+                //Update FileList
+
+                _fileList.Remove(fileName);
+
             }
-
-
 
         }
 
@@ -153,7 +248,8 @@ namespace ViewModelsXML.ViewModels
         {
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\";
+            
+            openFileDialog.InitialDirectory = @"C:\";
             openFileDialog.Filter = "Xml files (*.xml)|*.xml|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
@@ -166,7 +262,7 @@ namespace ViewModelsXML.ViewModels
                 MessageBox.Show("failed opening");
             }
         }
-        
+
 
         private void XMLtolist(string xmlFileText)
         {
@@ -200,9 +296,6 @@ namespace ViewModelsXML.ViewModels
             }
 
 
-
-
-
         }
         private void CreateXmlFromList(ObservableCollection<RadioStation> MainRadiolist)
         {
@@ -221,10 +314,9 @@ namespace ViewModelsXML.ViewModels
                             new XElement("category", station.Category),
                             new XElement("country", station.Country))
 
-
                 ));
 
-            Xmldoc.Save(@"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\RadioStations.xml");
+            Xmldoc.Save(@"..\..\..\ViewModelsXML\XML\RadioStations.xml");
         }
 
         private void SaveListToXML()
@@ -238,13 +330,12 @@ namespace ViewModelsXML.ViewModels
         {
             var query = StationList.GroupBy(x => x.Url.ToUpper()).Select(y => y.Last()).ToList();
 
-          StationList = new ObservableCollection<RadioStation>(query);
+            StationList = new ObservableCollection<RadioStation>(query);
 
             MessageBox.Show("Main List cleaned");
 
         }
 
-    
 
-}
+    }
 }

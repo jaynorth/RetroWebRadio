@@ -20,12 +20,28 @@ namespace RetroWebRadio.View
     /// </summary>
     public partial class MainWindowViewV2 : Window
     {
+        private double aspectRatio = 0.0;
         public MainWindowViewV2()
         {
-            
-            DataContext = new MainRadioViewModel();
+            MainRadioViewModel MRVM = new MainRadioViewModel();
+            DataContext = MRVM;
             InitializeComponent();
 
+            Loaded += Window_loaded;
+
+        }
+
+        private void Window_loaded(object sender, RoutedEventArgs e)
+        {
+            aspectRatio = this.ActualWidth / this.ActualHeight;
+        }
+
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            if (aspectRatio > 0)
+                // enforce aspect ratio by restricting height to stay in sync with width.  
+                this.Height = this.ActualWidth * (1 / aspectRatio);
+           
         }
     }
 }

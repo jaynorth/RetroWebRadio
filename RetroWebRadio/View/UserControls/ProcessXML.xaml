@@ -4,9 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RetroWebRadio.View.UserControls"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+
+
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid ShowGridLines="True">
+             d:DesignHeight="186" d:DesignWidth="466">
+    <Grid ShowGridLines="True" >
+        <Grid.Background>
+
+            <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
+            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\textures_28.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -26,15 +34,28 @@
             <Label Content="Save Updated List to Main XML"></Label>
             <Button Content="SaveToXML" Command="{Binding Save}" Height="Auto"></Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <StackPanel Grid.Row="1" Grid.Column="0"  Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Process Files in To Be Processed Folder"></Label>
             <Button Content="Process ToBeProcessed Folder " Command="{Binding ToBeProcessed}" Height="Auto"></Button>
+            
         </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
+            <ListBox x:Name="listDrop" Height="60" Margin="10"  AllowDrop="True" Drop="dropfiles" ItemsSource="{Binding DroppedItems}" >
+                
+            </ListBox>
+            <Button Content="DO" Command="{Binding AddItems}" Width="40" ></Button>
+            
+        </StackPanel>
+        
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <!--<StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Clean up List"></Label>
             <Button Content="Clean" Command="{Binding CleanList}" Height="Auto"></Button>
-        </StackPanel>
+            
+        </StackPanel>-->
 
+        
+            
+        
     </Grid>
 </UserControl>

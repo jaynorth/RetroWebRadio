@@ -47,6 +47,18 @@ namespace RetroWebRadio.View.UserControls
 
             Player.MediaFailed += Player_MediaFailed;
 
+            Loaded += Dashboard_Loaded;
+
+            
+            
+
+        }
+
+        private void Dashboard_Loaded(object sender, RoutedEventArgs e)
+        {
+            test.Text = "ActualHeight : " + ActualHeight + " ActualWidth : " + ActualWidth + " " + " ratio : " + ActualHeight / ActualWidth;
+
+
         }
 
         private void Player_MediaFailed(object sender, ExceptionRoutedEventArgs e)
@@ -100,7 +112,7 @@ namespace RetroWebRadio.View.UserControls
 
             Player.Play();
             displayBox.Text = "Playing";
-            RadioOff.IsChecked = true;
+            //RadioOff.IsChecked = true;
         
             pause_button.IsEnabled = true;
             pause = false;
@@ -111,7 +123,7 @@ namespace RetroWebRadio.View.UserControls
         {
             Player.Stop();
             displayBox.Text = "Stopped";
-            RadioOff.IsChecked = false;
+            //RadioOff.IsChecked = false;
 
             pause_button.IsEnabled = false;
         }

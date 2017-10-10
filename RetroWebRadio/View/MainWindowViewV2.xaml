@@ -8,12 +8,16 @@
         xmlns:userControls="clr-namespace:RetroWebRadio.View.UserControls"
         mc:Ignorable="d"
         Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }" 
-      Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }" 
-      
+     Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"
       WindowStartupLocation="CenterScreen"
         MinWidth="950"
-        Title="MainWindowView V2" >
-    <Grid ShowGridLines="True">
+        Title="MainWindowView V2" 
+        ResizeMode="CanResizeWithGrip"
+        >
+    <!--Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"-->
+    
+    <Grid ShowGridLines="True" Background="Black">
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="5*"></RowDefinition>
@@ -38,9 +42,9 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-
-        <!--<Rectangle Grid.Row="2" Grid.Column="1"  Stroke="Black" StrokeThickness="3" Grid.ColumnSpan="3" Grid.RowSpan="6" RadiusX="30" RadiusY="20">
+        <Rectangle Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" Grid.ColumnSpan="5" Fill="Gray"></Rectangle>
+      
+            <!--<Rectangle Grid.Row="2" Grid.Column="1"  Stroke="Black" StrokeThickness="3" Grid.ColumnSpan="3" Grid.RowSpan="6" RadiusX="30" RadiusY="20">
             --><!--<Rectangle.Fill>
                 <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\477679508.jpg" TileMode="Tile" ViewportUnits="RelativeToBoundingBox" Viewport="0,0,1,0.5"></ImageBrush>
             </Rectangle.Fill>-->
@@ -73,10 +77,11 @@
         </Rectangle>-->
 
 
-        <userControls:Dashboard Grid.Row="4" Grid.Column="5" Grid.RowSpan="1" />
+        <userControls:Dashboard Grid.Row="4" Grid.Column="5" Grid.RowSpan="1"  />
         <userControls:ProcessXML  Grid.Column="5"  Grid.Row="2" />
         <!--<userControls:Volume Grid.Column="5" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top"/>-->
 
-
+    
     </Grid>
+    
 </Window>

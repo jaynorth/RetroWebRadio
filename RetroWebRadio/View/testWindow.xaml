@@ -1,0 +1,13 @@
+﻿<Window x:Class="RetroWebRadio.View.testWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RetroWebRadio.View"
+        mc:Ignorable="d"
+        Title="testWindow">
+    <Grid>
+        <Button x:Name="button" Content="Button" Margin="210,145,255,184.04" Width="100" Height="100"/>
+        <Ellipse Fill="#FFF1ECEC" Stroke="Black" StrokeThickness="5" Margin="305,180,355,224"/>
+    </Grid>
+</Window>
