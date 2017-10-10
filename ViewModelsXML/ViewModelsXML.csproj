@@ -52,6 +52,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Tools\RatioConverter.cs" />
+    <Compile Include="Tools\TimeStamp.cs" />
     <Compile Include="ViewModels\Helpers\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainRadioViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

@@ -30,16 +30,18 @@
             <Label Content="Browse for an XML File"></Label>
             <Button Content="Browse" Command="{Binding Browse}" Height="Auto"></Button>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Save Updated List to Main XML"></Label>
             <Button Content="SaveToXML" Command="{Binding Save}" Height="Auto"></Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0"  Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-            <Label Content="Process Files in To Be Processed Folder"></Label>
-            <Button Content="Process ToBeProcessed Folder " Command="{Binding ToBeProcessed}" Height="Auto"></Button>
+            <TextBlock Text="Process Files in Application Folder" />
+            <TextBlock  Text="{Binding FileList.Count, StringFormat='Currently {0} file(s) waiting ' }"></TextBlock>
+            
+            <Button Content="Process" Command="{Binding ToBeProcessed}" Height="Auto"></Button>
             
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" >
             <ListBox x:Name="listDrop" Height="60" Margin="10"  AllowDrop="True" Drop="dropfiles" ItemsSource="{Binding DroppedItems}" >
                 
             </ListBox>

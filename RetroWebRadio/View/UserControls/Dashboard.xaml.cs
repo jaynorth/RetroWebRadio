@@ -56,7 +56,7 @@ namespace RetroWebRadio.View.UserControls
 
         private void Dashboard_Loaded(object sender, RoutedEventArgs e)
         {
-            test.Text = "ActualHeight : " + ActualHeight + " ActualWidth : " + ActualWidth + " " + " ratio : " + ActualHeight / ActualWidth;
+            //test.Text = "ActualHeight : " + ActualHeight + " ActualWidth : " + ActualWidth + " " + " ratio : " + ActualHeight / ActualWidth;
 
 
         }
@@ -68,7 +68,7 @@ namespace RetroWebRadio.View.UserControls
 
         private void Player_MediaOpened(object sender, RoutedEventArgs e)
         {
-            displayBox.Text = "MediaOpened";
+            displayBox.Text = "Playing ..";
         }
 
         private void Player_MediaEnded(object sender, RoutedEventArgs e)
@@ -86,7 +86,7 @@ namespace RetroWebRadio.View.UserControls
             string b = (Player.BufferingProgress * 100).ToString();
             displayBox.Text = "Buffer Progress " + b + " %";
             dt.Stop();
-            displayBox.Text = "Playing";
+            displayBox.Text = "Playing ..";
 
  
             // displayBox.Text += " " + Player.NaturalDuration;
@@ -111,7 +111,7 @@ namespace RetroWebRadio.View.UserControls
         {
 
             Player.Play();
-            displayBox.Text = "Playing";
+            displayBox.Text = "Attempt to play Stream";
             //RadioOff.IsChecked = true;
         
             pause_button.IsEnabled = true;

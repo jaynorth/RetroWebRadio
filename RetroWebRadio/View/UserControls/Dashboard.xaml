@@ -87,10 +87,9 @@
             </Border.Background>
             <StackPanel >
 
-                <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" HorizontalAlignment="Stretch" ><Run Text="test"/></TextBlock>
-                <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" ><InlineUIContainer/><InlineUIContainer/><InlineUIContainer>
-                        <TextBox x:Name="test" Height="23" TextWrapping="Wrap" Text="TextBox" Width="Auto"/>
-                    </InlineUIContainer><InlineUIContainer/></TextBlock>
+                <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" HorizontalAlignment="Stretch" ><Run Text="Ready"/></TextBlock>
+                <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" >
+                </TextBlock>
             </StackPanel>
         </Border>
         <Button x:Name="play_button"  Content="play" Grid.Column="1" Grid.Row="3"        Click="playButton_Click"  Height="Auto" Width="Auto" Style="{DynamicResource PauseStyle}" />

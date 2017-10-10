@@ -10,7 +10,7 @@
         Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }" 
      Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"
       WindowStartupLocation="CenterScreen"
-        MinWidth="950"
+        MinWidth="955"
         Title="MainWindowView V2" 
         ResizeMode="CanResizeWithGrip"
         >
@@ -43,6 +43,12 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Row="1" Grid.RowSpan="5" Grid.Column="2" Grid.ColumnSpan="5" Fill="Gray"></Rectangle>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Background="Red">
+            <Label Content="Search"></Label>
+            <TextBox Width="200"></TextBox>
+            <Button Content="GO"></Button>
+        </StackPanel>
+        
       
             <!--<Rectangle Grid.Row="2" Grid.Column="1"  Stroke="Black" StrokeThickness="3" Grid.ColumnSpan="3" Grid.RowSpan="6" RadiusX="30" RadiusY="20">
             --><!--<Rectangle.Fill>

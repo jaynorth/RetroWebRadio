@@ -12,6 +12,7 @@ using System.Windows;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using ViewModelsXML.Tools;
 using ViewModelsXML.ViewModels.Helpers;
 
 namespace ViewModelsXML.ViewModels
@@ -109,13 +110,14 @@ namespace ViewModelsXML.ViewModels
        
         public ObservableCollection<RadioStation> RadioList { get; set; }
 
+        public string dirPath { get; set; }
+
 
         private void LoadXML()
         {
             
-            //Below Relative Path
+            //Relative Path
             string path = "../../../ViewModelsXML/XML/RadioStations.xml";
-
 
             XDocument doc = XDocument.Load(path);
 
@@ -140,7 +142,7 @@ namespace ViewModelsXML.ViewModels
             StationList = new ObservableCollection<RadioStation>(list);
         }
 
-        public string dirPath { get; set; }
+     
         private void ProcessFolderToXML()
         {
  
@@ -178,6 +180,7 @@ namespace ViewModelsXML.ViewModels
                 _fileList = value;
 
                 OnPropertyChanged();
+
             }
         }
 
@@ -227,17 +230,16 @@ namespace ViewModelsXML.ViewModels
                 //Move file to Processed Folder
                 //GetsFileName
                 fileName = Path.GetFileName(item);
-                // Processed Folder + filename
-
+                //Rename File and append TimeStamp 
+                fileName = TimeStamp.AppendTimeStamp(fileName);
+                // Move File to Processed Folder 
                 destinationFile = destinationDir + @"\" + fileName;
-                //Move File
                 File.Move(item, destinationFile);
 
                 //Clear String (optional)
                 xmlString = "";
 
                 //Update FileList
-
                 _fileList.Remove(fileName);
 
             }
@@ -254,12 +256,12 @@ namespace ViewModelsXML.ViewModels
             if (openFileDialog.ShowDialog() == true)
             {
                 string fileText = File.ReadAllText(openFileDialog.FileName);
-                MessageBox.Show("xml document copied");
+                MessageBox.Show("xml data copied");
                 XMLtolist(fileText);
             }
             else
             {
-                MessageBox.Show("failed opening");
+                MessageBox.Show("no file was opened");
             }
         }
 
