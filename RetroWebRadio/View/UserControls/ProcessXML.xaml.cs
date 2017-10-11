@@ -28,6 +28,7 @@ namespace RetroWebRadio.View.UserControls
             InitializeComponent();
 
             this.FontSize = 11;
+            this.Foreground = Brushes.White;
 
         }
 

@@ -42,7 +42,14 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.Row="1" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="5" Fill="Gray"></Rectangle>
+
+
+        <Rectangle Grid.Row="1" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="5" RadiusX="18" RadiusY="18">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\40f3fc555a545028ba354c5efcb65c63.jpg" Stretch="UniformToFill"/>
+
+            </Rectangle.Fill>
+        </Rectangle>
 
         <Label Content="XML Dashboard" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold"></Label>
         <!--<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Background="Red">

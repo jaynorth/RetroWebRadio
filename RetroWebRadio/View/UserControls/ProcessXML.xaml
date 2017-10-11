@@ -48,7 +48,7 @@
         <Grid.Background>
 
             <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
-            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\textures_28.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\metal_texture_k_by_enframed.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="33*"></RowDefinition>
@@ -63,7 +63,7 @@
 
 
 
-        <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="5">
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="5" >
             <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
                     <Label Content="Import XML File"></Label>

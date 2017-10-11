@@ -14,7 +14,7 @@
                 <ResourceDictionary Source="PlayerStylesDic.xaml"/>
                 <ResourceDictionary Source="TestDic.xaml"/>
 
-                <ResourceDictionary Source="AgainDic.xaml"/>
+                <!--<ResourceDictionary Source="AgainDic.xaml"/>-->
                 <ResourceDictionary Source="ProcessXMLuc.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
