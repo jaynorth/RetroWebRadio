@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:RetroWebRadio"
              StartupUri="View/MainWindowViewV2.xaml">
+
+
     <Application.Resources>
 
 
@@ -13,6 +15,7 @@
                 <ResourceDictionary Source="TestDic.xaml"/>
 
                 <ResourceDictionary Source="AgainDic.xaml"/>
+                <ResourceDictionary Source="ProcessXMLuc.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
        

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Main List of Radio Stations XML-->
+<stations>
+  <station id="10">
+    <url>http://199.58.160.146:8006/</url>
+    <name>Psychedelicized Radio</name>
+    <category>Psychedelic</category>
+    <country></country>
+  </station>
+  <station id="11">
+    <url>http://96.126.107.232:8004</url>
+    <name>World Harmony Mix</name>
+    <category>Ethnic Fusion</category>
+    <country>JAPAN</country>
+  </station>
+  <station id="12">
+    <url>http://stream-uk1.radioparadise.com:80/mp3-128</url>
+    <name>Supernova Radio</name>
+    <category>Eclectic gold</category>
+    <country>UK</country>
+  </station>
+  <station id="13">
+    <url>http://patmos.cdnstream.com:9300/live?cb=74209.mp3</url>
+    <name>Radio Free Brooklyn</name>
+    <category>various</category>
+    <country>USA, Brooklyn</country>
+  </station>
+  <station id="14">
+    <url>http://listen.xray.fm:8000/stream</url>
+    <name>Xray</name>
+    <category>independent radio station</category>
+    <country>USA, Portland</country>
+  </station>
+  <station id="15">
+    <url>https://wwoz-sc.streamguys1.com/wwoz-hi.mp3</url>
+    <name>WWOZ New Orleans 90.7 FM</name>
+    <category>New Orleans Local radio</category>
+    <country>USA, New Orleans</country>
+  </station>
+  <station id="16">
+    <url>http://40s50s4fun.com:8000/low</url>
+    <name>country alternative 70s</name>
+    <category>country</category>
+    <country>USA</country>
+  </station>
+  <station id="17">
+    <url>http://mozart.wkar.msu.edu:80/wkar-jazz</url>
+    <name>WKAR Jazz</name>
+    <category>Jazz</category>
+    <country>USA</country>
+  </station>
+  <station id="18">
+    <url>http://icecast.radiovox.org:8000/live.mp3</url>
+    <name>RADIOVOX</name>
+    <category>Talk radio</category>
+    <country>Koweit</country>
+  </station>
+</stations>

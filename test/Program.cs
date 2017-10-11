@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
+using System.Xml.Linq;
+using System.Xml.Schema;
 
 namespace test
 {
@@ -11,13 +14,31 @@ namespace test
     {
         static void Main(string[] args)
         {
+            XmlSchemaSet schema = new XmlSchemaSet();
+            string xsdPath = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\Main\RadioStations.xsd";
+            schema.Add("", xsdPath);
 
-            Console.WriteLine(Directory.GetCurrentDirectory());
-            foreach (string s in Directory.EnumerateFiles("../../testFolder/"))
+            string xmlPath = @"D:\Visual Studio Projects\Projects\RetroWebRadio\ViewModelsXML\XML\Main\RadioStations.xml";
+
+            XDocument doc = XDocument.Load(xmlPath);
+
+            bool ValidationErrors = false;
+
+            doc.Validate(schema, (s, e) =>
             {
-                Console.WriteLine(s);
+                Console.WriteLine(e.Message);
+                ValidationErrors = true;
+            });
+
+            if (ValidationErrors)
+            {
+                Console.WriteLine("validation failed");
             }
-            Console.ReadLine();
+            else
+            {
+                Console.WriteLine("validation Succeeded");
+            }
+           
         }
     }
 }

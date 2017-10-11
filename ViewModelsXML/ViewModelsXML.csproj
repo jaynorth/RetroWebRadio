@@ -36,8 +36,13 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+    <None Include="XML\Main\RadioStations.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
@@ -53,8 +58,13 @@
     </Compile>
     <Compile Include="Tools\RatioConverter.cs" />
     <Compile Include="Tools\TimeStamp.cs" />
+    <Compile Include="Tools\ValidateXML.cs" />
+    <Compile Include="Tools\XmlHandling.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Helpers\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainRadioViewModel.cs" />
+    <Compile Include="ViewModels\ProcessXMLViewModel.cs" />
+    <Compile Include="ViewModels\RadioListsViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
@@ -86,7 +96,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XML\RadioStations.xml">
+    <Resource Include="XML\Main\RadioStations.xml">
       <SubType>Designer</SubType>
     </Resource>
   </ItemGroup>

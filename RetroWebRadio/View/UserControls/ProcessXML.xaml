@@ -9,46 +9,97 @@
 
              mc:Ignorable="d" 
              d:DesignHeight="186" d:DesignWidth="466">
-    <Grid ShowGridLines="True" >
+    <UserControl.Resources>
+        <Style x:Key="BrowseStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Height="18.91" Width="62.04" d:LayoutOverrides="Width">
+                            <Rectangle RadiusY="4.5" RadiusX="4.5" Stroke="Black">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF818181" Offset="0"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Browse" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontFamily="Century Gothic" Foreground="Black"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid ShowGridLines="False" >
         <Grid.Background>
 
             <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
             <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\textures_28.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-       
+            <RowDefinition Height="33*"></RowDefinition>
+            <RowDefinition Height="33*"></RowDefinition>
+            <RowDefinition Height="33*"></RowDefinition>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-      
-        <StackPanel Grid.Row="0" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-            <Label Content="Browse for an XML File"></Label>
-            <Button Content="Browse" Command="{Binding Browse}" Height="Auto"></Button>
+
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="5">
+            <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+                    <Label Content="Import XML File"></Label>
+                    <Button Content="Browse" Command="{Binding Browse}" Height="Auto" Style="{DynamicResource BrowseStyle1}"></Button>
+                </StackPanel>
+            </Border>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-            <Label Content="Save Updated List to Main XML"></Label>
-            <Button Content="SaveToXML" Command="{Binding Save}" Height="Auto"></Button>
+        <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="5" >
+            <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1">
+                    <Label Content="Save Main XML"></Label>
+                    <Button Content="Save" Command="{Binding Save}" Height="Auto" Style="{DynamicResource ButtonStyleXML3}"></Button>
+                </StackPanel>
+            </Border>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0"  Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-            <TextBlock Text="Process Files in Application Folder" />
-            <TextBlock  Text="{Binding FileList.Count, StringFormat='Currently {0} file(s) waiting ' }"></TextBlock>
-            
-            <Button Content="Process" Command="{Binding ToBeProcessed}" Height="Auto"></Button>
-            
+        <StackPanel Grid.Row="1" VerticalAlignment="Center"  Margin="5">
+            <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2" >
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="2">
+                    <TextBlock Text="Process Files in Application Folder" />
+                    <TextBlock  Text="{Binding FileList.Count, StringFormat='Currently {0} file(s) waiting ' }"></TextBlock>
+
+                    <Button Content="Process" Command="{Binding ToBeProcessed}" Height="Auto" Style="{DynamicResource ProcessStyle1}"></Button>
+                </StackPanel>
+            </Border>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" >
-            <ListBox x:Name="listDrop" Height="60" Margin="10"  AllowDrop="True" Drop="dropfiles" ItemsSource="{Binding DroppedItems}" >
-                
+
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Drag and Drop XML files to import"></Label>
+            <ListBox x:Name="listDrop" Height="Auto" Width="Auto" MinHeight="120" MinWidth="180" Margin="5"  AllowDrop="True" Drop="dropfiles" ItemsSource="{Binding DroppedItems}" >
+
             </ListBox>
-            <Button Content="DO" Command="{Binding AddItems}" Width="40" ></Button>
-            
+            <Button Content="Import" Command="{Binding Import}" Width="40" Style="{DynamicResource ImportStyle1}" ></Button>
+
         </StackPanel>
-        
+
 
         <!--<StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Label Content="Clean up List"></Label>
@@ -56,8 +107,8 @@
             
         </StackPanel>-->
 
-        
-            
-        
+
+
+
     </Grid>
 </UserControl>

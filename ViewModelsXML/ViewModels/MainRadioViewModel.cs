@@ -21,7 +21,9 @@ namespace ViewModelsXML.ViewModels
     {
         public MainRadioViewModel()
         {
-            LoadXML();
+            ValidateXML xmlValidation = new ValidateXML();
+
+            LoadXML(xmlValidation);
             _currentStation = StationList.FirstOrDefault();
        
             dirPath = @"..\..\..\ViewModelsXML\XML\ToBeProcessed";
@@ -31,23 +33,48 @@ namespace ViewModelsXML.ViewModels
 
             InitCommands();
 
+            //load other view models
+
+            dvm = new DashboardViewModel(this);
+            pxmlvm = new ProcessXMLViewModel(this);
+            rlvm = new RadioListsViewModel(this);
+
         }
+
+        public RadioListsViewModel rlvm { get; set; }
+
+        public DashboardViewModel dvm { get; set; }
+
+        public ProcessXMLViewModel pxmlvm { get; set; }
+
+        
+
+        public ValidateXML xmlValidation { get; set; }
 
         private void InitCommands()
         {
-            AddItems = new RelayCommand(AddDropped);
+            Import = new RelayCommand(AddDropped);
             Browse = new RelayCommand(BrowseForXML);
             Save = new RelayCommand(SaveListToXML);
             ToBeProcessed = new RelayCommand(ProcessFolderToXML);
             CleanList = new RelayCommand(CleanMainList);
+            Remove = new RelayCommand(RemoveStation);
         }
 
-        public RelayCommand AddItems { get; set; }
+       
+
+        public RelayCommand Import { get; set; }
+
+        public RelayCommand Remove { get; set; }
         public RelayCommand Browse { get; set; }
         public RelayCommand Save { get; set; }
         public RelayCommand ToBeProcessed { get; set; }
         public RelayCommand CleanList { get; set; }
 
+        private void RemoveStation()
+        {
+            StationList.Remove(CurrentStation);
+        }
 
         public void DoFileDrop(IEnumerable<String> filePaths)
         {
@@ -113,14 +140,24 @@ namespace ViewModelsXML.ViewModels
         public string dirPath { get; set; }
 
 
-        private void LoadXML()
+        private void LoadXML(ValidateXML xmlValidation)
         {
-            
+
             //Relative Path
-            string path = "../../../ViewModelsXML/XML/RadioStations.xml";
+            string path = "../../../ViewModelsXML/XML/Main/RadioStations.xml";
+
+
+
+            xmlValidation.validate(path, false);
 
             XDocument doc = XDocument.Load(path);
 
+            CreateCollectionFromXML(doc);
+
+        }
+
+        private void CreateCollectionFromXML(XDocument doc)
+        {
             List<RadioStation> list = (from station in doc.Descendants("station")
                                        select new RadioStation()
                                        {
@@ -142,7 +179,6 @@ namespace ViewModelsXML.ViewModels
             StationList = new ObservableCollection<RadioStation>(list);
         }
 
-     
         private void ProcessFolderToXML()
         {
  
@@ -221,6 +257,9 @@ namespace ViewModelsXML.ViewModels
             string destinationDir = @"..\..\..\ViewModelsXML\XML\Processed";
             foreach (var item in fileEntries)
             {
+                //check if xml is valid
+                xmlValidation.validate(item, true);
+
                 //convert file to string
                 xmlString = File.ReadAllText(item);
 
@@ -268,8 +307,22 @@ namespace ViewModelsXML.ViewModels
 
         private void XMLtolist(string xmlFileText)
         {
+            XDocument doc = new XDocument();
 
-            XDocument doc = XDocument.Parse(xmlFileText);
+            try
+            {
+                doc = XDocument.Parse(xmlFileText);
+            }
+            catch (XmlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                throw;
+            }
+            
 
             List<RadioStation> newlist = (from station in doc.Descendants("station")
                                           select new RadioStation()
@@ -292,7 +345,6 @@ namespace ViewModelsXML.ViewModels
             foreach (var item in RadioList)
             {
                 item.Id = topId + 1;
-                //MainRadioViewModel.StationList.Add(item);
                 StationList.Add(item);
                 topId++;
             }
@@ -318,7 +370,7 @@ namespace ViewModelsXML.ViewModels
 
                 ));
 
-            Xmldoc.Save(@"..\..\..\ViewModelsXML\XML\RadioStations.xml");
+            Xmldoc.Save(@"..\..\..\ViewModelsXML\XML\Main\RadioStations.xml");
         }
 
         private void SaveListToXML()

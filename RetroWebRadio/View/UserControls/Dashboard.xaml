@@ -51,7 +51,7 @@
 
 
 
-    <Grid ShowGridLines="True"  >
+    <Grid ShowGridLines="False"  >
         <Grid.Background>
 
             <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
@@ -88,8 +88,9 @@
             <StackPanel >
 
                 <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" HorizontalAlignment="Stretch" ><Run Text="Ready"/></TextBlock>
-                <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" >
-                </TextBlock>
+                <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" Text="{Binding CurrentStation.Name }" />
+                <!--<TextBlock  FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" Text="{Binding dvm.CurrentRadioName }" />-->
+              
             </StackPanel>
         </Border>
         <Button x:Name="play_button"  Content="play" Grid.Column="1" Grid.Row="3"        Click="playButton_Click"  Height="Auto" Width="Auto" Style="{DynamicResource PauseStyle}" />

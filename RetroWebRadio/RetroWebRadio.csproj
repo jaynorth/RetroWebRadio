@@ -69,6 +69,9 @@
     <Compile Include="View\UserControls\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\EditList.xaml.cs">
+      <DependentUpon>EditList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\ProcessXML.xaml.cs">
       <DependentUpon>ProcessXML.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PlayerStylesDic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessXMLuc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,6 +113,10 @@
     <Page Include="Assets\DictionaryTest.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserControls\EditList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserControls\ProcessXML.xaml">
       <SubType>Designer</SubType>

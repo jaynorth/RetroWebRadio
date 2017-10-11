@@ -59,30 +59,5 @@ namespace ViewModelsXML.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;
-        ///&lt;!--Main List of Radio Stations XML--&gt;
-        ///&lt;stations&gt;
-        ///  &lt;station id=&quot;10&quot;&gt;
-        ///    &lt;url&gt;http://uplink.intronic.nl/rgrfm_oldiesradio&lt;/url&gt;
-        ///    &lt;name&gt;Oldiesradio RGR&lt;/name&gt;
-        ///    &lt;category&gt;Oldies&lt;/category&gt;
-        ///    &lt;country&gt;&lt;/country&gt;
-        ///  &lt;/station&gt;
-        ///  &lt;station id=&quot;11&quot;&gt;
-        ///    &lt;url&gt;http://199.58.160.146:8006/&lt;/url&gt;
-        ///    &lt;name&gt;Psychedelicized Radio&lt;/name&gt;
-        ///    &lt;category&gt;Psychedelic&lt;/category&gt;
-        ///    &lt;country&gt;&lt;/country&gt;
-        ///  &lt;/station&gt;
-        ///  &lt;station id=&quot;12&quot;&gt;
-        ///    &lt;url&gt;http [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string RadioStations {
-            get {
-                return ResourceManager.GetString("RadioStations", resourceCulture);
-            }
-        }
     }
 }

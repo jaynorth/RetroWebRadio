@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using ViewModelsXML.ViewModels;
 
 namespace RetroWebRadio.View.UserControls
 {
@@ -28,8 +29,8 @@ namespace RetroWebRadio.View.UserControls
         public Dashboard()
         {
             InitializeComponent();
-           
 
+            
 
             
 

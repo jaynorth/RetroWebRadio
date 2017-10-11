@@ -9,6 +9,7 @@
   </station>
   <station id="11">
     <url>http://199.58.160.146:8006/</url>
+    <url>http://199.58.160.146:8006/</url>
     <name>Psychedelicized Radio</name>
     <category>Psychedelic</category>
     <country></country>
@@ -21,8 +22,9 @@
   </station>
   <station id="13">
     <url>http://96.126.107.232:8004</url>
-    <name>World Harmony Mix </name>
     <category>Ethnic Fusion</category>
+    <name>World Harmony Mix </name>
+    
     <country>JAPAN</country>
   </station>
   <station id="14">
@@ -33,7 +35,7 @@
   </station>
   <station id="15">
     <url>http://listen.xray.fm:8000/stream</url>
-    <name>Xray</name>
+    <name>Xray radio</name>
     <category>independent radio station</category>
     <country>USA, Portland</country>
   </station>

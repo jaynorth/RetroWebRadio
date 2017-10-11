@@ -26,8 +26,11 @@ namespace RetroWebRadio.View
             MainRadioViewModel MRVM = new MainRadioViewModel();
             DataContext = MRVM;
             InitializeComponent();
+            Style = (Style)FindResource(typeof(Window));
 
             Loaded += Window_loaded;
+
+            this.FontFamily = new FontFamily("Segoe UI Semibold");
 
         }
 
