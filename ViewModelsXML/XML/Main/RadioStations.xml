@@ -31,12 +31,6 @@
     <category>independent radio station</category>
     <country>USA, Portland</country>
   </station>
-  <station id="15">
-    <url>https://wwoz-sc.streamguys1.com/wwoz-hi.mp3</url>
-    <name>WWOZ New Orleans 90.7 FM</name>
-    <category>New Orleans Local radio</category>
-    <country>USA, New Orleans</country>
-  </station>
   <station id="16">
     <url>http://40s50s4fun.com:8000/low</url>
     <name>country alternative 70s</name>
