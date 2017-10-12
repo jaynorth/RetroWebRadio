@@ -55,7 +55,7 @@
         <Grid.Background>
 
             <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
-            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\metal_texture_k_by_enframed.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\p16ls076231vv31m1u1g6ta4m1cti9-details.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
