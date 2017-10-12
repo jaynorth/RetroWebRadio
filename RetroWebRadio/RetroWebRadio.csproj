@@ -171,12 +171,6 @@
     <Resource Include="Images\papertexture.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\dark-grunge-texture_1048-4055.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Dirty_Steel_02_UV_H_CM_1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\stock-photo-a-speaker-grille-use-for-texture-or-background-69291109.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -195,16 +189,10 @@
     <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\metal_texture_k_by_enframed.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\images %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\p16ls076231vv31m1u1g6ta4m1cti9-details.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\RustyMetal_texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Brushed_metal_text.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

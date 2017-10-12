@@ -55,7 +55,7 @@
         <Grid.Background>
 
             <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
-            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\p16ls076231vv31m1u1g6ta4m1cti9-details.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\Brushed_metal_text.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
@@ -82,7 +82,7 @@
 
         <Border BorderBrush="Gray" CornerRadius="3,3,3,3" BorderThickness="2,2,2,2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
             <Border.Background>
-                <ImageBrush ImageSource="/Images/pg278q_taskbar_vertical_bars_notvisible.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\pg278q_taskbar_vertical_bars_notvisible.png" Stretch="UniformToFill"/>
 
             </Border.Background>
             <StackPanel >
