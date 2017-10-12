@@ -25,46 +25,44 @@ namespace ViewModelsXML.Tools
 
         public bool validate(string xmlPath, bool showSucceedMessage)
         {
-            bool ValidationErrors = false;
 
-            XDocument doc = new XDocument();
+            bool Validated = true;
+            
+           
             try
             {
-                 doc = XDocument.Load(xmlPath);
+                string Filename = Path.GetFileName(xmlPath);
+                XDocument doc = XDocument.Load(xmlPath);
                 doc.Validate(schema, (s, e) =>
                 {
-                    string Filename = Path.GetFileName(xmlPath);
-                    MessageBox.Show(Filename + " is not valid: " + e.Message);
 
-                    ValidationErrors = true;
+                    //MessageBox.Show(Filename + " is not valid: " + e.Message);
+
+                    Validated = false;
                 });
 
-                if (ValidationErrors)
+                if (Validated == false)
                 {
-                    MessageBox.Show("XSD validation failed");
+                    MessageBox.Show(Filename + ": XSD validation failed");
                 }
                 else if (showSucceedMessage)
                 {
-                    MessageBox.Show("XSD validation Succeeded");
+                    MessageBox.Show(Filename + ": XSD validation Succeeded");
                 }
-            }
-            catch (XmlException e)
-            {
-                MessageBox.Show(e.Message);
             }
             catch (Exception e)
             {
-
-                MessageBox.Show(e.Message);
+                
+                string fileName = Path.GetFileName(xmlPath);
+                MessageBox.Show("Exception with "+fileName+" : " + e.Message +"\nValidation Failed!");
+                Validated = false;
             }
 
+           
+                
 
-            
+                return Validated;
 
-          
-
-
-            return ValidationErrors;
 
         }
 

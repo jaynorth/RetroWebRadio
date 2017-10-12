@@ -31,6 +31,7 @@ namespace RetroWebRadio.View
             Loaded += Window_loaded;
 
             this.FontFamily = new FontFamily("Segoe UI Semibold");
+            this.FontSize = 11;
             this.Foreground = Brushes.White;
 
         }

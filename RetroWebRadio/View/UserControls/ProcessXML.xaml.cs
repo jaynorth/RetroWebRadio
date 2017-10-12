@@ -27,8 +27,9 @@ namespace RetroWebRadio.View.UserControls
         {
             InitializeComponent();
 
-            this.FontSize = 11;
-            this.Foreground = Brushes.White;
+            //this.FontSize = 11;
+            //this.Foreground = Brushes.White;
+
 
         }
 
@@ -47,20 +48,7 @@ namespace RetroWebRadio.View.UserControls
 
             var myVM = DataContext as MainRadioViewModel;
 
-            // myVM.DroppedItems.Clear();
-
-
-            //foreach (string s in droppedFiles)
-            //{
-            //    myVM.DroppedItems.Add(s);
-            //}
-
             myVM.DoFileDrop(droppedFiles);
-
-
-
-
-
 
         }
     }

@@ -17,7 +17,7 @@ namespace ViewModelsXML.ViewModels
         {
 
 
-            //LoadXML(mrvm.xmlValidation);
+            //LoadXmlData(mrvm.xmlValidation);
         }
 
         public MainRadioViewModel mrvm { get; set; }

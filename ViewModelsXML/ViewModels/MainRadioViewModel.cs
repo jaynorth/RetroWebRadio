@@ -21,47 +21,28 @@ namespace ViewModelsXML.ViewModels
     {
         public MainRadioViewModel()
         {
-            ValidateXML xmlValidation = new ValidateXML();
 
-            LoadXML(xmlValidation);
+            LoadXmlData();
             _currentStation = StationList.FirstOrDefault();
-       
-            dirPath = @"..\..\..\ViewModelsXML\XML\ToBeProcessed";
-            _fileList = new ObservableCollection<string>();
-            GetFileListInDirectory(dirPath);
-            _droppedItems = new ObservableCollection<string>();
+            
+            //Application Folder containing XML Files waiting to be processed
+            AppXmlFolderToBeProcessed = @"..\..\..\ViewModelsXML\XML\ToBeProcessed";
+            GetFileListInApplicationFolder(AppXmlFolderToBeProcessed);
+            //##############################################################
 
+            _droppedItems = new ObservableCollection<string>();
             InitCommands();
 
-            //load other view models
-
-            dvm = new DashboardViewModel(this);
-            pxmlvm = new ProcessXMLViewModel(this);
-            rlvm = new RadioListsViewModel(this);
-
         }
-
-        public RadioListsViewModel rlvm { get; set; }
-
-        public DashboardViewModel dvm { get; set; }
-
-        public ProcessXMLViewModel pxmlvm { get; set; }
-
-        
-
-        public ValidateXML xmlValidation { get; set; }
 
         private void InitCommands()
         {
-            Import = new RelayCommand(AddDropped);
-            Browse = new RelayCommand(BrowseForXML);
+            Import = new RelayCommand(AddDroppedXml);
+            Browse = new RelayCommand(BrowseXml);
             Save = new RelayCommand(SaveListToXML);
             ToBeProcessed = new RelayCommand(ProcessFolderToXML);
-            CleanList = new RelayCommand(CleanMainList);
             Remove = new RelayCommand(RemoveStation);
         }
-
-       
 
         public RelayCommand Import { get; set; }
 
@@ -69,15 +50,13 @@ namespace ViewModelsXML.ViewModels
         public RelayCommand Browse { get; set; }
         public RelayCommand Save { get; set; }
         public RelayCommand ToBeProcessed { get; set; }
-        public RelayCommand CleanList { get; set; }
+      
 
-        private void RemoveStation()
-        {
-            StationList.Remove(CurrentStation);
-        }
+       
 
         public void DoFileDrop(IEnumerable<String> filePaths)
         {
+            
 
             foreach (var item in filePaths)
             {
@@ -135,65 +114,38 @@ namespace ViewModelsXML.ViewModels
         }
 
        
-        public ObservableCollection<RadioStation> RadioList { get; set; }
-
-        public string dirPath { get; set; }
+        public string AppXmlFolderToBeProcessed { get; set; }
 
 
-        private void LoadXML(ValidateXML xmlValidation)
+        private void LoadXmlData()
         {
 
-            //Relative Path
-            string path = "../../../ViewModelsXML/XML/Main/RadioStations.xml";
+            //xmlValidation.validate(path, false);
 
+            RadioStationRepository rsRep = new RadioStationRepository();
 
-
-            xmlValidation.validate(path, false);
-
-            XDocument doc = XDocument.Load(path);
-
-            CreateCollectionFromXML(doc);
+            StationList = rsRep.GetStations(doc);
 
         }
 
-        private void CreateCollectionFromXML(XDocument doc)
-        {
-            List<RadioStation> list = (from station in doc.Descendants("station")
-                                       select new RadioStation()
-                                       {
-                                           Id = (int)station.Attribute("id"),
-                                           Name = (string)station.Element("name"),
-                                           Category = (string)station.Element("category"),
-                                           Country = (string)station.Element("country"),
-                                           Url = (string)station.Element("url")
-
-                                       }).ToList();
-            int Id = 10;
-
-            foreach (var item in list)
-            {
-                item.Id = Id;
-                Id++;
-            }
-
-            StationList = new ObservableCollection<RadioStation>(list);
-        }
+     
 
         private void ProcessFolderToXML()
         {
  
-            if (Directory.Exists(dirPath))
+            if (Directory.Exists(AppXmlFolderToBeProcessed))
             {
-                ProcessFilesInDirectory(dirPath);
+                PocessXmlFolder(AppXmlFolderToBeProcessed);
             }
             else
             {
-                MessageBox.Show("No XML Files in this Directory: " + dirPath);
+                MessageBox.Show("Directory does not exist: " + AppXmlFolderToBeProcessed);
             }
         }
 
-        private ObservableCollection<string> GetFileListInDirectory(string dirPath)
+        private ObservableCollection<string> GetFileListInApplicationFolder(string dirPath)
         {
+            _fileList = new ObservableCollection<string>();
             string[] fileEntries = Directory.GetFiles(dirPath, "*.xml");
             string fileName;
 
@@ -220,21 +172,19 @@ namespace ViewModelsXML.ViewModels
             }
         }
 
-        private void AddDropped()
+        private void AddDroppedXml()
         {
-
-            string xmlString;
+            
             foreach (var item in _droppedItems)
             {
-                //Process file
-                xmlString = File.ReadAllText(item);
-                XMLtolist(xmlString);
+       
+                AddXml(item);
             }
 
             DroppedItems.Clear();
         }
 
-        private void ProcessFilesInDirectory(string directoryPath)
+        private void PocessXmlFolder(string directoryPath)
         {
             string[] fileEntries = Directory.GetFiles(directoryPath, "*.xml");
 
@@ -251,41 +201,33 @@ namespace ViewModelsXML.ViewModels
 
             MessageBox.Show("The following " + fileEntries.Count() + " files will be processed :" + '\n' + s);
 
-
-            string xmlString;
             string destinationFile;
             string destinationDir = @"..\..\..\ViewModelsXML\XML\Processed";
+            
+
             foreach (var item in fileEntries)
             {
-                //check if xml is valid
-                xmlValidation.validate(item, true);
+               
+                    AddXml(item);
 
-                //convert file to string
-                xmlString = File.ReadAllText(item);
+                    //Move file to Processed Folder
+                    //GetsFileName
+                    fileName = Path.GetFileName(item);
+                    //Rename File and append TimeStamp 
+                    fileName = TimeStamp.AppendTimeStamp(fileName);
+                    // Move File to Processed Folder 
+                    destinationFile = destinationDir + @"\" + fileName;
+                    File.Move(item, destinationFile);
 
-                //Process to List and update
-                XMLtolist(xmlString);
-
-                //Move file to Processed Folder
-                //GetsFileName
-                fileName = Path.GetFileName(item);
-                //Rename File and append TimeStamp 
-                fileName = TimeStamp.AppendTimeStamp(fileName);
-                // Move File to Processed Folder 
-                destinationFile = destinationDir + @"\" + fileName;
-                File.Move(item, destinationFile);
-
-                //Clear String (optional)
-                xmlString = "";
-
-                //Update FileList
-                _fileList.Remove(fileName);
-
+                    //Update FileList
+                    _fileList.Remove(fileName);
             }
+
+            GetFileListInApplicationFolder(AppXmlFolderToBeProcessed);
 
         }
 
-        private void BrowseForXML()
+        private void BrowseXml()
         {
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -294,9 +236,8 @@ namespace ViewModelsXML.ViewModels
             openFileDialog.Filter = "Xml files (*.xml)|*.xml|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                string fileText = File.ReadAllText(openFileDialog.FileName);
-                MessageBox.Show("xml data copied");
-                XMLtolist(fileText);
+                string filePath = (openFileDialog.FileName);
+                AddXml(filePath);
             }
             else
             {
@@ -305,90 +246,36 @@ namespace ViewModelsXML.ViewModels
         }
 
 
-        private void XMLtolist(string xmlFileText)
+        private void AddXml(string filePath)
         {
-            XDocument doc = new XDocument();
+            ValidateXML xmlValidate = new ValidateXML();
 
-            try
+            if (xmlValidate.validate(filePath, true))
             {
-                doc = XDocument.Parse(xmlFileText);
-            }
-            catch (XmlException e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-                throw;
+                XDocument NewDoc = XDocument.Load(filePath);
+
+                RadioStationRepository rsRep = new RadioStationRepository();
+                rsRep.AddStations(NewDoc, StationList);
             }
             
-
-            List<RadioStation> newlist = (from station in doc.Descendants("station")
-                                          select new RadioStation()
-                                          {
-                                              //  Id = (int)station.Element("id"),
-                                              Name = (string)station.Element("name"),
-                                              Category = (string)station.Element("category"),
-                                              Country = (string)station.Element("country"),
-                                              Url = (string)station.Element("url")
-
-                                          }).ToList();
-            RadioList = new ObservableCollection<RadioStation>(newlist);
-
-            //find existing top Id in Main List
-
-            //var topId = MainRadioViewModel.StationList.Max(t => t.Id);
-            var topId = StationList.Max(t => t.Id);
-
-            //This will update the list that displays the stations on the main window
-            foreach (var item in RadioList)
-            {
-                item.Id = topId + 1;
-                StationList.Add(item);
-                topId++;
-            }
-
-
         }
-        private void CreateXmlFromList(ObservableCollection<RadioStation> MainRadiolist)
+
+        private void RemoveStation()
         {
-            XDocument Xmldoc = new XDocument(
+            RadioStationRepository rsRep = new RadioStationRepository();
+            rsRep.RemoveStation(CurrentStation, StationList);
 
-                new XDeclaration("1.0", "utf-8", "yes"),
-
-                new XComment("Main List of Radio Stations XML"),
-
-                new XElement("stations",
-
-                    from station in MainRadiolist
-                    select new XElement("station", new XAttribute("id", station.Id),
-                            new XElement("url", station.Url),
-                            new XElement("name", station.Name),
-                            new XElement("category", station.Category),
-                            new XElement("country", station.Country))
-
-                ));
-
-            Xmldoc.Save(@"..\..\..\ViewModelsXML\XML\Main\RadioStations.xml");
         }
 
         private void SaveListToXML()
         {
-            CleanMainList();
-            CreateXmlFromList(StationList);
-            MessageBox.Show("XML File created and saved");
+            RadioStationRepository rsRep = new RadioStationRepository();
+            StationList = rsRep.CleanMainList(StationList);
+            rsRep.SaveStations(StationList);
+            MessageBox.Show("XML File re-created and saved");
         }
 
-        private void CleanMainList()
-        {
-            var query = StationList.GroupBy(x => x.Url.ToUpper()).Select(y => y.Last()).ToList();
-
-            StationList = new ObservableCollection<RadioStation>(query);
-
-            MessageBox.Show("Main List cleaned");
-
-        }
+        
 
 
     }

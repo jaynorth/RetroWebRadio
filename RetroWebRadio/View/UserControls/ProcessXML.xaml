@@ -82,8 +82,8 @@
         <StackPanel Grid.Row="1" VerticalAlignment="Center"  Margin="5">
             <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2" >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="2">
-                    <TextBlock Text="Process Files in Application Folder" />
-                    <TextBlock  Text="{Binding FileList.Count, StringFormat='Currently {0} file(s) waiting ' }"></TextBlock>
+                    <TextBlock Text="Process Files in Application Folder" Foreground="Black" />
+                    <TextBlock  Text="{Binding FileList.Count, StringFormat='Currently {0} file(s) waiting ' }" Foreground="Black"></TextBlock>
 
                     <Button Content="Process" Command="{Binding ToBeProcessed}" Height="Auto" Style="{DynamicResource ProcessStyle1}"></Button>
                 </StackPanel>
