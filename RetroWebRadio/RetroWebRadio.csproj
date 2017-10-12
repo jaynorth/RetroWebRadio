@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\brushedmetaltexture1080p.jpg" />
+    <Resource Include="Images\CRT_Screen.png" />
     <Resource Include="Images\pg278q_taskbar_vertical_bars_notvisible.png" />
   </ItemGroup>
   <ItemGroup>
