@@ -54,7 +54,7 @@
         
         <Grid.Background>
 
-            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\8158_original (1).png"  />
+            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\CRT_Screen.png"  />
 
 
         </Grid.Background>

@@ -46,7 +46,7 @@
 
         <Rectangle Grid.Row="1" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="5" RadiusX="18" RadiusY="18">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\40f3fc555a545028ba354c5efcb65c63.jpg" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\RustyMetal_texture.jpg" Stretch="UniformToFill"/>
 
             </Rectangle.Fill>
         </Rectangle>
