@@ -191,19 +191,10 @@
     <Resource Include="Images\speaker_fliped.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\8c58881e824dfa57fa62968c9ffe0ebd.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\a7c63ab43ba164ed536556b278443bf1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\metal_texture_k_by_enframed.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\brushed-steel-feet.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\images %281%29.jpg" />
