@@ -25,28 +25,28 @@
     <category>independent radio station</category>
     <country>USA, Portland</country>
   </station>
-  <station id="18">
+  <station id="14">
     <url>http://icecast.radiovox.org:8000/live.mp3</url>
     <name>RADIOVOX</name>
     <category>Talk radio</category>
     <country>Koweit</country>
   </station>
   <station id="15">
-    <url>https://wwoz-sc.streamguys1.com/wwoz-hi.mp3</url>
-    <name>WWOZ New Orleans 90.7 FM</name>
-    <category>New Orleans Local radio</category>
-    <country>USA, New Orleans</country>
-  </station>
-  <station id="16">
     <url>http://mozart.wkar.msu.edu:80/wkar-jazz</url>
     <name>WKAR Jazz</name>
     <category>Jazz</category>
     <country>USA</country>
   </station>
-  <station id="17">
+  <station id="16">
     <url>http://50.7.77.114:8479/autodj</url>
     <name>Cyprus Dub Community Radio</name>
     <category>Reggae</category>
     <country>Jmaica</country>
+  </station>
+  <station id="17">
+    <url>https://soundcloud.com/starskywatts/broke-and-hungry</url>
+    <name>starsky</name>
+    <category>soundcloud</category>
+    <country></country>
   </station>
 </stations>

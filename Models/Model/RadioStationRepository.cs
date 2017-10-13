@@ -16,7 +16,7 @@ namespace Models.Model
     {
         public RadioStationRepository()
         {
-
+            
             list = new List<RadioStation>();
             StationList = new ObservableCollection<RadioStation>();
         }
@@ -82,9 +82,9 @@ namespace Models.Model
             StationList.Remove(CurrentStation);
         }
 
-        public void SaveStations(ObservableCollection<RadioStation> MainRadiolist)
+        public XDocument CreateNewXML(ObservableCollection<RadioStation> MainRadiolist)
         {
-            //MainRadiolist = CleanMainList(MainRadiolist);
+   
 
             XDocument Xmldoc = new XDocument(
 
@@ -99,11 +99,14 @@ namespace Models.Model
                             new XElement("url", station.Url),
                             new XElement("name", station.Name),
                             new XElement("category", station.Category),
+                          
                             new XElement("country", station.Country))
 
                 ));
 
-            Xmldoc.Save(@"..\..\..\ViewModelsXML\XML\Main\RadioStations.xml");
+            return Xmldoc;
+          
+      
         }
 
         public ObservableCollection<RadioStation> CleanMainList(ObservableCollection<RadioStation> StationList)
@@ -118,6 +121,10 @@ namespace Models.Model
 
         }
 
+        public void SaveXML(XDocument doc)
+        {
+            doc.Save(@"..\..\..\ViewModelsXML\XML\Main\RadioStations.xml");
+        }
     }
 
 

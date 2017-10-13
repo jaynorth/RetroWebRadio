@@ -271,8 +271,19 @@ namespace ViewModelsXML.ViewModels
         {
             RadioStationRepository rsRep = new RadioStationRepository();
             StationList = rsRep.CleanMainList(StationList);
-            rsRep.SaveStations(StationList);
-            MessageBox.Show("XML File re-created and saved");
+            XDocument doc =  rsRep.CreateNewXML(StationList);
+            ValidateXML xmlValidate = new ValidateXML();
+            if (xmlValidate.validate(doc, false))
+            {
+                rsRep.SaveXML(doc);
+                MessageBox.Show("XML File re-created and saved");
+            }
+            else
+            {
+                MessageBox.Show("XML not saved, error with validation");
+            }
+            
+            
         }
 
         

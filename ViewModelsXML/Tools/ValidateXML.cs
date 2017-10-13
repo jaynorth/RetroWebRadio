@@ -58,11 +58,45 @@ namespace ViewModelsXML.Tools
                 Validated = false;
             }
 
-           
-                
-
                 return Validated;
 
+        }
+
+        public bool validate(XDocument doc, bool showSucceedMessage)
+        {
+
+            bool Validated = true;
+
+
+            try
+            {
+          
+                doc.Validate(schema, (s, e) =>
+                {
+
+                    //MessageBox.Show(Filename + " is not valid: " + e.Message);
+
+                    Validated = false;
+                });
+
+                if (Validated == false)
+                {
+                    MessageBox.Show("XSD validation failed");
+                }
+                else if (showSucceedMessage)
+                {
+                    MessageBox.Show( "XSD validation Succeeded");
+                }
+            }
+            catch (Exception e)
+            {
+
+                
+                MessageBox.Show("Exception: "  + e.Message + "\nValidation Failed!");
+                Validated = false;
+            }
+
+            return Validated;
 
         }
 

@@ -7,10 +7,13 @@
         xmlns:tools="clr-namespace:ViewModelsXML.Tools;assembly=ViewModelsXML"
         xmlns:userControls="clr-namespace:RetroWebRadio.View.UserControls"
         mc:Ignorable="d"
+       
         Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }" 
      Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"
-      WindowStartupLocation="CenterScreen"
-        MinWidth="955"
+      MinHeight="600"
+        MinWidth="950"
+        WindowStartupLocation="CenterScreen"
+        
         Title="MainWindowView V2" 
         ResizeMode="CanResizeWithGrip"
         >
@@ -51,7 +54,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Label Content="XML Dashboard" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold"></Label>
+        <Label Content="XML Dashboard" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="Gold"></Label>
         <!--<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Background="Red">
             <Label Content="Search"></Label>
             <TextBox Width="200"></TextBox>
