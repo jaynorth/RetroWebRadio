@@ -21,47 +21,48 @@ namespace WinformsVisualization
         private IWaveSource _source;
         private PitchShifter _pitchShifter;
         private LineSpectrum _lineSpectrum;
-        private VoicePrint3DSpectrum _voicePrint3DSpectrum;
+        //private VoicePrint3DSpectrum _voicePrint3DSpectrum;
 
         private readonly Bitmap _bitmap = new Bitmap(2000, 600);
-        private int _xpos;
+        //private int _xpos;
 
         public Form1()
         {
             InitializeComponent();
+            DefaultDevice();
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var openFileDialog = new OpenFileDialog()
-            {
-                Filter = CodecFactory.SupportedFilesFilterEn,
-                Title = "Select a file..."
-            };
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                Stop();
-                
-                //open the selected file
-                ISampleSource source = CodecFactory.Instance.GetCodec(openFileDialog.FileName)
-                    .ToSampleSource()
-                    .AppendSource(x => new PitchShifter(x), out _pitchShifter);
+        //private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    var openFileDialog = new OpenFileDialog()
+        //    {
+        //        Filter = CodecFactory.SupportedFilesFilterEn,
+        //        Title = "Select a file..."
+        //    };
+        //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+        //    {
+        //        Stop();
 
-                SetupSampleSource(source);
+        //        //open the selected file
+        //        ISampleSource source = CodecFactory.Instance.GetCodec(openFileDialog.FileName)
+        //            .ToSampleSource()
+        //            .AppendSource(x => new PitchShifter(x), out _pitchShifter);
 
-                //play the audio
-                _soundOut = new WasapiOut();
-                _soundOut.Initialize(_source);
-                _soundOut.Play();
+        //        SetupSampleSource(source);
 
-                timer1.Start();
+        //        //play the audio
+        //        _soundOut = new WasapiOut();
+        //        _soundOut.Initialize(_source);
+        //        _soundOut.Play();
 
-                propertyGridTop.SelectedObject = _lineSpectrum;
-                propertyGridBottom.SelectedObject = _voicePrint3DSpectrum;
-            }
-        }
+        //        timer1.Start();
 
-        private void fromDefaultDeviceToolStripMenuItem_Click(object sender, EventArgs e)
+        //        propertyGridTop.SelectedObject = _lineSpectrum;
+        //        propertyGridBottom.SelectedObject = _voicePrint3DSpectrum;
+        //    }
+        //}
+
+        private void DefaultDevice()
         {
             Stop();
 
@@ -90,11 +91,44 @@ namespace WinformsVisualization
 
             timer1.Start();
 
-            propertyGridTop.SelectedObject = _lineSpectrum;
-            propertyGridBottom.SelectedObject = _voicePrint3DSpectrum;
+            //propertyGridTop.SelectedObject = _lineSpectrum;
+            //propertyGridBottom.SelectedObject = _voicePrint3DSpectrum;
         }
 
-        
+        //private void fromDefaultDeviceToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    Stop();
+
+        //    //open the default device 
+        //    _soundIn = new WasapiLoopbackCapture();
+        //    //Our loopback capture opens the default render device by default so the following is not needed
+        //    //_soundIn.Device = MMDeviceEnumerator.DefaultAudioEndpoint(DataFlow.Render, Role.Console);
+        //    _soundIn.Initialize();
+
+        //    var soundInSource = new SoundInSource(_soundIn);
+        //    ISampleSource source = soundInSource.ToSampleSource().AppendSource(x => new PitchShifter(x), out _pitchShifter);
+
+        //    SetupSampleSource(source);
+
+        //    // We need to read from our source otherwise SingleBlockRead is never called and our spectrum provider is not populated
+        //    byte[] buffer = new byte[_source.WaveFormat.BytesPerSecond / 2];
+        //    soundInSource.DataAvailable += (s, aEvent) =>
+        //    {
+        //        int read;
+        //        while ((read = _source.Read(buffer, 0, buffer.Length)) > 0) ;
+        //    };
+
+
+        //    //play the audio
+        //    _soundIn.Start();
+
+        //    timer1.Start();
+
+        //    propertyGridTop.SelectedObject = _lineSpectrum;
+        //    propertyGridBottom.SelectedObject = _voicePrint3DSpectrum;
+        //}
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -117,14 +151,14 @@ namespace WinformsVisualization
                 IsXLogScale = true,
                 ScalingStrategy = ScalingStrategy.Sqrt
             };
-            _voicePrint3DSpectrum = new VoicePrint3DSpectrum(fftSize)
-            {
-                SpectrumProvider = spectrumProvider,
-                UseAverage = true,
-                PointCount = 200,
-                IsXLogScale = true,
-                ScalingStrategy = ScalingStrategy.Sqrt
-            };
+            //_voicePrint3DSpectrum = new VoicePrint3DSpectrum(fftSize)
+            //{
+            //    SpectrumProvider = spectrumProvider,
+            //    UseAverage = true,
+            //    PointCount = 200,
+            //    IsXLogScale = true,
+            //    ScalingStrategy = ScalingStrategy.Sqrt
+            //};
 
             //the SingleBlockNotificationStream is used to intercept the played samples
             var notificationSource = new SingleBlockNotificationStream(aSampleSource);
@@ -170,7 +204,7 @@ namespace WinformsVisualization
         {
             //render the spectrum
             GenerateLineSpectrum();
-            GenerateVoice3DPrintSpectrum();   
+            //GenerateVoice3DPrintSpectrum();   
         }
 
         private void GenerateLineSpectrum()
@@ -185,21 +219,21 @@ namespace WinformsVisualization
             }
         }
 
-        private void GenerateVoice3DPrintSpectrum()
-        {
-            using (Graphics g = Graphics.FromImage(_bitmap))
-            {
-                pictureBoxBottom.Image = null;
-                if (_voicePrint3DSpectrum.CreateVoicePrint3D(g, new RectangleF(0, 0, _bitmap.Width, _bitmap.Height),
-                    _xpos, Color.Black, 3))
-                {
-                    _xpos += 3;
-                    if (_xpos >= _bitmap.Width)
-                        _xpos = 0;
-                }
-                pictureBoxBottom.Image = _bitmap;
-            }
-        }
+        //private void GenerateVoice3DPrintSpectrum()
+        //{
+        //    using (Graphics g = Graphics.FromImage(_bitmap))
+        //    {
+        //        pictureBoxBottom.Image = null;
+        //        if (_voicePrint3DSpectrum.CreateVoicePrint3D(g, new RectangleF(0, 0, _bitmap.Width, _bitmap.Height),
+        //            _xpos, Color.Black, 3))
+        //        {
+        //            _xpos += 3;
+        //            if (_xpos >= _bitmap.Width)
+        //                _xpos = 0;
+        //        }
+        //        pictureBoxBottom.Image = _bitmap;
+        //    }
+        //}
 
         private void pitchShiftToolStripMenuItem_Click(object sender, EventArgs e)
         {

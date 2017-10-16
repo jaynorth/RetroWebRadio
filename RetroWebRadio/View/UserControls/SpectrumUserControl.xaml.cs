@@ -30,6 +30,7 @@ namespace RetroWebRadio.View.UserControls
             spectForm.TopLevel = false;
             spectForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             windowsFormsHost1.Child = spectForm;
+            
         }
     }
 }

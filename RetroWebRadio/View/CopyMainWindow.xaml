@@ -98,9 +98,9 @@
 
 
         <userControls:Dashboard Grid.Row="4" Grid.Column="5" Grid.RowSpan="1"  />
-        <TabControl Grid.Column="5"  Grid.Row="2">
-            <TabItem Header="Main">
-                <userControls:SpectrumUserControl />
+        <TabControl Grid.Column="5"  Grid.Row="2" Background="Transparent">
+            <TabItem Header="Main" Background="Red">
+                <userControls:SpectrumUserControl  />
                 </TabItem>
                 <TabItem Header="XML">
                 <userControls:ProcessXML  />
