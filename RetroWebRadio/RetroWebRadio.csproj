@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\CopyMainWindow.xaml.cs">
+      <DependentUpon>CopyMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindowViewV2.xaml.cs">
       <DependentUpon>MainWindowViewV2.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,15 @@
     </Compile>
     <Compile Include="View\UserControls\EditList.xaml.cs">
       <DependentUpon>EditList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\EqualizerUserControl.xaml.cs">
+      <DependentUpon>EqualizerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\MainUserControl.xaml.cs">
+      <DependentUpon>MainUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\MainUserControlV2.xaml.cs">
+      <DependentUpon>MainUserControlV2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\ProcessXML.xaml.cs">
       <DependentUpon>ProcessXML.xaml</DependentUpon>
@@ -94,6 +106,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\CopyMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindowViewV2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,6 +123,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserControls\EditList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\EqualizerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\MainUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\MainUserControlV2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="View\UserControls\Copies\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\RustyMetal_texture.jpg" />

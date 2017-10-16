@@ -13,13 +13,13 @@
     <category>Eclectic gold</category>
     <country>UK</country>
   </station>
-  <station id="12">
+  <station id="31">
     <url>http://patmos.cdnstream.com:9300/live?cb=74209.mp3</url>
     <name>Radio Free Brooklyn</name>
     <category>various</category>
     <country>USA, Brooklyn</country>
   </station>
-  <station id="13">
+  <station id="29">
     <url>http://listen.xray.fm:8000/stream</url>
     <name>Xray</name>
     <category>independent radio station</category>
@@ -43,10 +43,10 @@
     <category>Reggae</category>
     <country>Jmaica</country>
   </station>
-  <station id="17">
-    <url>https://soundcloud.com/starskywatts/broke-and-hungry</url>
-    <name>starsky</name>
-    <category>soundcloud</category>
-    <country></country>
+  <station id="30">
+    <url>https://wwoz-sc.streamguys1.com/wwoz-hi.mp3</url>
+    <name>WWOZ New Orleans 90.7 FM</name>
+    <category>New Orleans Local radio</category>
+    <country>USA, New Orleans</country>
   </station>
 </stations>
