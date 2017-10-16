@@ -39,8 +39,18 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSCore, Version=1.2.1.1, Culture=neutral, PublicKeyToken=5a08f2b6f4415dea, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSCore.1.2.1.1\lib\net35-client\CSCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CSCore.Visualization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSCore.Visualization.0.8.9\lib\CSCore.Visualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +64,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -89,6 +100,9 @@
     </Compile>
     <Compile Include="View\UserControls\RadioLists.xaml.cs">
       <DependentUpon>RadioLists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\SpectrumUserControl.xaml.cs">
+      <DependentUpon>SpectrumUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="PlayerStylesDic.xaml">
       <SubType>Designer</SubType>
@@ -146,6 +160,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\UserControls\SpectrumUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -165,6 +183,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,6 +199,10 @@
     <Resource Include="Images\pg278q_taskbar_vertical_bars_notvisible.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\cscore-master\Samples\WinformsVisualization\WinformsVisualization.csproj">
+      <Project>{ee2bf129-3451-4ada-8698-42ee2a293688}</Project>
+      <Name>WinformsVisualization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{7AF07DC2-1637-405A-969D-2CA069AD0D6B}</Project>
       <Name>Models</Name>
@@ -216,6 +239,7 @@
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="View\UserControls\Copies\" />
+    <Folder Include="View\Winform\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\RustyMetal_texture.jpg" />
