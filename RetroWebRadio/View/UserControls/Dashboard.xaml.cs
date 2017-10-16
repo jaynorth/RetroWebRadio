@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -53,6 +54,9 @@ namespace RetroWebRadio.View.UserControls
             
             
 
+            
+            
+
         }
 
         private void Dashboard_Loaded(object sender, RoutedEventArgs e)
@@ -69,16 +73,19 @@ namespace RetroWebRadio.View.UserControls
 
         private void Player_MediaOpened(object sender, RoutedEventArgs e)
         {
-            displayBox.Text = "Playing ..";
+           
+            displayBox.Text = "Playing ..????";
         }
 
         private void Player_MediaEnded(object sender, RoutedEventArgs e)
         {
+           
             displayBox.Text = "MediaEnded";
         }
 
         private void Player_BufferingEnded(object sender, RoutedEventArgs e)
         {
+            
             string s = "buffer ended";
             //BufferProgress.Value = Player.BufferingProgress * 100;
             double v = Player.BufferingProgress * 100;
@@ -87,7 +94,7 @@ namespace RetroWebRadio.View.UserControls
             string b = (Player.BufferingProgress * 100).ToString();
             displayBox.Text = "Buffer Progress " + b + " %";
             dt.Stop();
-            displayBox.Text = "Playing ..";
+            displayBox.Text = "Playing ..!!!";
 
  
             // displayBox.Text += " " + Player.NaturalDuration;
@@ -103,6 +110,7 @@ namespace RetroWebRadio.View.UserControls
 
         private void Player_BufferingStarted(object sender, RoutedEventArgs e)
         {
+            
             dt.Start();
             string s = "buffer started";
             displayBox.Text = s;
@@ -177,6 +185,15 @@ namespace RetroWebRadio.View.UserControls
                 displayBox.Text = "Paused";
 
             }
+
+        }
+
+        private void TargetEventhandler(object sender, DataTransferEventArgs e)
+        {
+            
+            
+            //
+            
 
         }
 

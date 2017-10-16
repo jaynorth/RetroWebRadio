@@ -59,9 +59,9 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="26*"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="26*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="26*"/>
             <RowDefinition Height="4*"/>
 
@@ -77,9 +77,6 @@
 
         </Grid.ColumnDefinitions>
 
-
-
-
         <Border BorderBrush="Gray" CornerRadius="3,3,3,3" BorderThickness="2,2,2,2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
             <Border.Background>
                 <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\pg278q_taskbar_vertical_bars_notvisible.png" Stretch="UniformToFill"/>
@@ -89,7 +86,7 @@
 
                 <TextBlock x:Name="displayBox" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4" HorizontalAlignment="Stretch" ><Run Text="Ready"/></TextBlock>
                 <TextBlock x:Name="StationInfoText" FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" Text="{Binding CurrentStation.Name }" />
-                <!--<TextBlock  FontStretch="SemiExpanded" Foreground="GreenYellow" Margin="4, 10" VerticalAlignment="Bottom" FontStyle="Italic" Text="{Binding dvm.CurrentRadioName }" />-->
+               
               
             </StackPanel>
         </Border>
@@ -101,11 +98,8 @@
         <Label Content="Volume" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1"></Label>
         <Slider x:Name="volumeSlider"  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center"  HorizontalAlignment="Stretch" Width="Auto"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1" Style="{DynamicResource SliderStyle1}" Template="{DynamicResource SliderHorizontal}" />
 
-
-
-
         <!--<TextBlock x:Name="volumeDisplay"  HorizontalAlignment="Right" Margin="10,5,0,0" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>-->
-        <MediaElement x:Name="Player" LoadedBehavior="Manual" Source="{Binding CurrentStation.Url}" Volume="0" />
+        <MediaElement x:Name="Player" LoadedBehavior="Manual"  Source="{Binding CurrentStation.Url}"   Volume="0" />
     </Grid>
 
 </UserControl>

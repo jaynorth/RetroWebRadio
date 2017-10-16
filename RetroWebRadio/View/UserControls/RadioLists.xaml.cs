@@ -36,6 +36,10 @@ namespace RetroWebRadio.View.UserControls
 
         }
 
-        
+        private void datagridRadioList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            
+        }
     }
 }

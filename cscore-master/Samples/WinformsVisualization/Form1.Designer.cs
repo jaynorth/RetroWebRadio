@@ -1,7 +1,10 @@
-﻿namespace WinformsVisualization
+﻿using System.Drawing;
+
+namespace WinformsVisualization
 {
     partial class Form1
     {
+    
         /// <summary>
         /// Erforderliche Designervariable.
         /// </summary>
@@ -28,32 +31,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
+
             this.components = new System.ComponentModel.Container();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromDefaultDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pitchShiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+           
+            
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBoxTop = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop)).BeginInit();
             this.SuspendLayout();
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // fromDefaultDeviceToolStripMenuItem
-            // 
-            this.fromDefaultDeviceToolStripMenuItem.Name = "fromDefaultDeviceToolStripMenuItem";
-            this.fromDefaultDeviceToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // pitchShiftToolStripMenuItem
-            // 
-            this.pitchShiftToolStripMenuItem.Name = "pitchShiftToolStripMenuItem";
-            this.pitchShiftToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.pitchShiftToolStripMenuItem.Text = "Pitch-Shift";
-            this.pitchShiftToolStripMenuItem.Click += new System.EventHandler(this.pitchShiftToolStripMenuItem_Click);
-            // 
+             // 
             // timer1
             // 
             this.timer1.Interval = 40;
@@ -86,13 +73,9 @@
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripMenuItem pitchShiftToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fromDefaultDeviceToolStripMenuItem;
+
         private System.Windows.Forms.PictureBox pictureBoxTop;
     }
 }

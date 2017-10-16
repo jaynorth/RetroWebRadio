@@ -71,29 +71,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\CopyMainWindow.xaml.cs">
-      <DependentUpon>CopyMainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainWindowViewV2.xaml.cs">
-      <DependentUpon>MainWindowViewV2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\testWindow.xaml.cs">
-      <DependentUpon>testWindow.xaml</DependentUpon>
+    <Compile Include="View\AppMainWindow.xaml.cs">
+      <DependentUpon>AppMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\EditList.xaml.cs">
       <DependentUpon>EditList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControls\EqualizerUserControl.xaml.cs">
-      <DependentUpon>EqualizerUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControls\MainUserControl.xaml.cs">
-      <DependentUpon>MainUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControls\MainUserControlV2.xaml.cs">
-      <DependentUpon>MainUserControlV2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\ProcessXML.xaml.cs">
       <DependentUpon>ProcessXML.xaml</DependentUpon>
@@ -104,15 +89,15 @@
     <Compile Include="View\UserControls\SpectrumUserControl.xaml.cs">
       <DependentUpon>SpectrumUserControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="PlayerStylesDic.xaml">
+    <Page Include="Resources\PlayerStylesDic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProcessXMLuc.xaml">
+    <Page Include="Resources\ProcessXMLuc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestDic.xaml">
+    <Page Include="Resources\TestDic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,15 +105,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\CopyMainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MainWindowViewV2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\testWindow.xaml">
+    <Page Include="View\AppMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,18 +114,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserControls\EditList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\EqualizerUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\MainUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\MainUserControlV2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,7 +202,6 @@
     <Resource Include="Images\speaker_fliped.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
     <Folder Include="View\UserControls\Copies\" />
     <Folder Include="View\Winform\" />
   </ItemGroup>

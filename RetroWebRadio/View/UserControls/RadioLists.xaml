@@ -12,13 +12,13 @@
 
 
         <Style TargetType="{x:Type ScrollBar}">
-                <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderBrush" Value="Red"></Setter>
             <Setter Property="Foreground" Value="GreenYellow"></Setter>
             <!--<Setter Property="Opacity" Value="0.1"></Setter>-->
-            </Style>
-        
-      
+        </Style>
+
+
 
         <Style  TargetType="{x:Type DataGrid}">
 
@@ -51,21 +51,17 @@
     </UserControl.Resources>
 
     <Grid >
-        
+
         <Grid.Background>
 
             <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\CRT_Screen.png"  />
 
 
         </Grid.Background>
-        <!--<Rectangle Stroke="gray" StrokeThickness="6"  Stretch="UniformToFill" RadiusX="10" RadiusY="20"></Rectangle>-->
 
-        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" RowHeaderWidth="0" HorizontalAlignment="Center" VerticalAlignment="Center" GridLinesVisibility="None"  BorderBrush="Transparent" BorderThickness="0" Margin="20"  CanUserAddRows="False">
+        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" RowHeaderWidth="0" HorizontalAlignment="Center" VerticalAlignment="Center" GridLinesVisibility="None"  BorderBrush="Transparent" BorderThickness="0" Margin="20"  CanUserAddRows="False" SelectionChanged="datagridRadioList_SelectionChanged">
             <DataGrid.Columns >
-                <!--<DataGridTextColumn Header="Id" Binding="{Binding Id}" >
 
-                </DataGridTextColumn>-->
-                
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"  >
 
                 </DataGridTextColumn>
@@ -83,7 +79,7 @@
                 <DataGridTextColumn Header="Country" Binding="{Binding Country}">
 
                 </DataGridTextColumn>
-               
+
             </DataGrid.Columns>
         </DataGrid>
 

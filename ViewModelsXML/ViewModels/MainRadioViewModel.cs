@@ -21,7 +21,7 @@ namespace ViewModelsXML.ViewModels
     {
         public MainRadioViewModel()
         {
-
+  
             LoadXmlData();
             _currentStation = StationList.FirstOrDefault();
             
@@ -32,6 +32,8 @@ namespace ViewModelsXML.ViewModels
 
             _droppedItems = new ObservableCollection<string>();
             InitCommands();
+
+           
 
         }
 
@@ -107,13 +109,20 @@ namespace ViewModelsXML.ViewModels
             set
             {
 
+
                 _currentStation = value;
+                
                 OnPropertyChanged();
+
 
             }
         }
 
+
        
+
+
+
         public string AppXmlFolderToBeProcessed { get; set; }
 
 
