@@ -3,50 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:RetroWebRadio.View.UserControls"
+             xmlns:local="clr-namespace:RetroWebRadio.View.UserControls" x:Name="closed"
               x:Class="RetroWebRadio.View.UserControls.Dashboard"
              mc:Ignorable="d" d:DesignWidth="466" d:DesignHeight="186" 
     
+    
              >
-    <!---->
+
     <UserControl.Resources>
 
-        <!--<ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Assets/DictionaryTest.xaml"></ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>-->
-
-
-    <!--<Style x:Key="RedGreenRadio"  TargetType="{x:Type RadioButton}">
-            <Style.Triggers>
-                <Trigger Property="IsChecked" Value="true">
-                    <Setter Property = "Background" Value="Green"/>
-                </Trigger>
-                <Trigger Property="IsChecked" Value="false">
-                    <Setter Property = "Background" Value="Red"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style x:Key="playButton" TargetType="{x:Type Button}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid>
-                            <Ellipse Fill="#FFF4F4F5" Stroke="Black"/>
-                            <ContentPresenter x:Name="click" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsFocused" Value="True"/>
-                            <Trigger Property="IsDefaulted" Value="True"/>
-                            <Trigger Property="IsMouseOver" Value="True"/>
-                            <Trigger Property="IsPressed" Value="True"/>
-                            <Trigger Property="IsEnabled" Value="False"/>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>-->
     </UserControl.Resources>
 
 
@@ -98,8 +63,10 @@
         <Label Content="Volume" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1"></Label>
         <Slider x:Name="volumeSlider"  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center"  HorizontalAlignment="Stretch" Width="Auto"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1" Style="{DynamicResource SliderStyle1}" Template="{DynamicResource SliderHorizontal}" />
 
-        <!--<TextBlock x:Name="volumeDisplay"  HorizontalAlignment="Right" Margin="10,5,0,0" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>-->
-        <MediaElement x:Name="Player" LoadedBehavior="Manual"  Source="{Binding CurrentStation.Url}"   Volume="0" />
+        
+        <MediaElement x:Name="Player" LoadedBehavior="Manual"     Volume="0" />
+
+       
     </Grid>
 
 </UserControl>

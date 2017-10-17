@@ -31,16 +31,12 @@ namespace WinformsVisualization
         /// </summary>
         private void InitializeComponent()
         {
-            
-
             this.components = new System.ComponentModel.Container();
-           
-            
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBoxTop = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop)).BeginInit();
             this.SuspendLayout();
-             // 
+            // 
             // timer1
             // 
             this.timer1.Interval = 40;
@@ -66,6 +62,7 @@ namespace WinformsVisualization
             this.Controls.Add(this.pictureBoxTop);
             this.Name = "Form1";
             this.Text = "CSCore - Visualization";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop)).EndInit();
             this.ResumeLayout(false);
 

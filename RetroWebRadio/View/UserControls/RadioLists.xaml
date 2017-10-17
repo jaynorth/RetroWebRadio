@@ -59,7 +59,7 @@
 
         </Grid.Background>
 
-        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}" AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" RowHeaderWidth="0" HorizontalAlignment="Center" VerticalAlignment="Center" GridLinesVisibility="None"  BorderBrush="Transparent" BorderThickness="0" Margin="20"  CanUserAddRows="False" SelectionChanged="datagridRadioList_SelectionChanged">
+        <DataGrid x:Name="datagridRadioList" ItemsSource="{Binding StationList}"   SelectedItem="{Binding CurrentStation, Mode=TwoWay}"  AutoGenerateColumns="False" Background="Transparent" RowBackground="Transparent" RowHeaderWidth="0" HorizontalAlignment="Center" VerticalAlignment="Center" GridLinesVisibility="None"  BorderBrush="Transparent" BorderThickness="0" Margin="20"  CanUserAddRows="False" SelectionChanged="datagridRadioList_SelectionChanged">
             <DataGrid.Columns >
 
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"  >

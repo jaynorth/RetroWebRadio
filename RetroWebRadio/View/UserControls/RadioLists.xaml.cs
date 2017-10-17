@@ -36,10 +36,17 @@ namespace RetroWebRadio.View.UserControls
 
         }
 
+        public delegate void PassSelectedStation(RadioStation CurrentStation);
+
+        public event PassSelectedStation StationSelectedEvent;
+
         private void datagridRadioList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            
+
+        
+            StationSelectedEvent((RadioStation)datagridRadioList.SelectedItem);
         }
+
+        
     }
 }

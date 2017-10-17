@@ -51,11 +51,6 @@ namespace RetroWebRadio.View.UserControls
 
             Loaded += Dashboard_Loaded;
 
-            
-            
-
-            
-            
 
         }
 
@@ -74,7 +69,7 @@ namespace RetroWebRadio.View.UserControls
         private void Player_MediaOpened(object sender, RoutedEventArgs e)
         {
            
-            displayBox.Text = "Playing ..????";
+            displayBox.Text = "Opened ..";
         }
 
         private void Player_MediaEnded(object sender, RoutedEventArgs e)
@@ -94,7 +89,7 @@ namespace RetroWebRadio.View.UserControls
             string b = (Player.BufferingProgress * 100).ToString();
             displayBox.Text = "Buffer Progress " + b + " %";
             dt.Stop();
-            displayBox.Text = "Playing ..!!!";
+           // displayBox.Text = "Playing ...";
 
  
             // displayBox.Text += " " + Player.NaturalDuration;
@@ -197,6 +192,6 @@ namespace RetroWebRadio.View.UserControls
 
         }
 
-
+        
     }
 }
