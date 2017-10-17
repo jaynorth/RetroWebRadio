@@ -181,15 +181,6 @@
     <Resource Include="Images\canstock26763900.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\wood.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\papertexture.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\stock-photo-a-speaker-grille-use-for-texture-or-background-69291109.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\textures_28.jpg" />
   </ItemGroup>
   <ItemGroup>

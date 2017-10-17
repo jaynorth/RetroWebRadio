@@ -19,8 +19,8 @@
     <Grid ShowGridLines="False"  >
         <Grid.Background>
 
-            <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
-            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\Brushed_metal_text.jpg" Stretch="UniformToFill"/>
+
+            <ImageBrush ImageSource="/Images/Brushed_metal_text.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>

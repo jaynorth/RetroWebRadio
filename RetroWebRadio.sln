@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformsVisualization", "cscore-master\Samples\WinformsVisualization\WinformsVisualization.csproj", "{EE2BF129-3451-4ADA-8698-42EE2A293688}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAudio", "TestAudio\TestAudio.csproj", "{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,18 +69,6 @@ Global
 		{EE2BF129-3451-4ADA-8698-42EE2A293688}.Release|x64.Build.0 = Release|Any CPU
 		{EE2BF129-3451-4ADA-8698-42EE2A293688}.Release|x86.ActiveCfg = Release|Any CPU
 		{EE2BF129-3451-4ADA-8698-42EE2A293688}.Release|x86.Build.0 = Release|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Debug|x64.Build.0 = Debug|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Debug|x86.Build.0 = Debug|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Release|x64.ActiveCfg = Release|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Release|x64.Build.0 = Release|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Release|x86.ActiveCfg = Release|Any CPU
-		{A8EFED0B-D1DD-45DB-8DBB-5114853FDBF8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

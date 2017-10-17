@@ -45,12 +45,23 @@ namespace RetroWebRadio.View
             dashboardUserControl.Player.IsMuted = true;
             System.Threading.Thread.Sleep(600);
 
-            System.Uri uri = new System.Uri(CurrentStation.Url);
+
+
+            if (CurrentStation!=null)
+            {
+                System.Uri uri = new System.Uri(CurrentStation.Url);
+                dashboardUserControl.Player.Source = uri;
+                dashboardUserControl.Player.IsMuted = false;
+            }        
+                    
+               
+       
+
+                
+ 
             
 
-            dashboardUserControl.Player.Source = uri;
-
-            dashboardUserControl.Player.IsMuted = false;
+            
 
         }
 

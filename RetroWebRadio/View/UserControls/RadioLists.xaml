@@ -66,13 +66,13 @@
 
                 </DataGridTextColumn>
 
-                <DataGridTemplateColumn>
+                <!--<DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button >[X]</Button>
+                            <Button Content="[X]" Background="Transparent" Foreground="GreenYellow" BorderBrush="Transparent" Command="{Binding Remove, ElementName=datagridRadioList, XPath=SelectedItem}" Click="test"></Button >
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="Category" Binding="{Binding Category}">
 
                 </DataGridTextColumn>

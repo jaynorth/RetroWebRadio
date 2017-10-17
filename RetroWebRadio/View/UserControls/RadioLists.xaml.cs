@@ -47,6 +47,9 @@ namespace RetroWebRadio.View.UserControls
             StationSelectedEvent((RadioStation)datagridRadioList.SelectedItem);
         }
 
-        
+        private void test(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("clicked");
+        }
     }
 }

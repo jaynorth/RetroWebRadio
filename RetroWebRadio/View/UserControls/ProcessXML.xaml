@@ -47,8 +47,7 @@
     <Grid ShowGridLines="False" >
         <Grid.Background>
 
-            <!--<ImageBrush ImageSource="/Images/brushedmetaltexture1080p.jpg" Stretch="UniformToFill"/>-->
-            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\Brushed_metal_text.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/Images/Brushed_metal_text.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="33*"></RowDefinition>
@@ -101,14 +100,7 @@
         </StackPanel>
 
 
-        <!--<StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-            <Label Content="Clean up List"></Label>
-            <Button Content="Clean" Command="{Binding CleanList}" Height="Auto"></Button>
-            
-        </StackPanel>-->
-
-
-
+       
 
     </Grid>
 </UserControl>

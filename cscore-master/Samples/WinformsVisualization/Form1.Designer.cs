@@ -47,7 +47,7 @@ namespace WinformsVisualization
             this.pictureBoxTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxTop.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTop.Name = "pictureBoxTop";
-            this.pictureBoxTop.Size = new System.Drawing.Size(806, 237);
+            this.pictureBoxTop.Size = new System.Drawing.Size(806, 329);
             this.pictureBoxTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTop.TabIndex = 0;
             this.pictureBoxTop.TabStop = false;
@@ -58,7 +58,7 @@ namespace WinformsVisualization
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(806, 237);
+            this.ClientSize = new System.Drawing.Size(806, 329);
             this.Controls.Add(this.pictureBoxTop);
             this.Name = "Form1";
             this.Text = "CSCore - Visualization";

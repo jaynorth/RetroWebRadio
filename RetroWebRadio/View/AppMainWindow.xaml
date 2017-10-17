@@ -8,7 +8,7 @@
         xmlns:tools="clr-namespace:ViewModelsXML.Tools;assembly=ViewModelsXML"
         xmlns:userControls="clr-namespace:RetroWebRadio.View.UserControls"
         mc:Ignorable="d"
-        WindowStyle="None"
+        WindowStyle="SingleBorderWindow" BorderBrush="Brown"
         
        
        
@@ -19,7 +19,7 @@
         WindowStartupLocation="CenterScreen"
         
         Title="StreamRadio" 
-        ResizeMode="CanResizeWithGrip" Closing="Window_Closing"
+        ResizeMode="CanResizeWithGrip"  Closing="Window_Closing"
         >
     <!--Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"-->
 
@@ -42,9 +42,9 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="47*"></ColumnDefinition>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="47*"></ColumnDefinition>
+            <ColumnDefinition Width="41*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -54,7 +54,7 @@
 
         <Rectangle Grid.Row="1" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="5" RadiusX="18" RadiusY="18">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\RustyMetal_texture.jpg" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/Images/RustyMetal_texture.jpg" Stretch="UniformToFill"/>
 
             </Rectangle.Fill>
         </Rectangle>

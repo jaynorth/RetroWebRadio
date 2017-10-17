@@ -76,10 +76,15 @@ namespace Models.Model
             }
         }
 
-        public void RemoveStation(RadioStation CurrentStation,  ObservableCollection<RadioStation> StationList)
+        public ObservableCollection<RadioStation> RemoveStation(RadioStation CurrentStation,  ObservableCollection<RadioStation> StationList)
         {
+            RadioStation removeStation = CurrentStation;
 
-            StationList.Remove(CurrentStation);
+            CurrentStation = StationList.First();
+
+            StationList.Remove(removeStation);
+            
+            return StationList;
         }
 
         public XDocument CreateNewXML(ObservableCollection<RadioStation> MainRadiolist)

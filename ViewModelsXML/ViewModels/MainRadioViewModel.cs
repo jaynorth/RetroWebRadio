@@ -272,8 +272,7 @@ namespace ViewModelsXML.ViewModels
         private void RemoveStation()
         {
             RadioStationRepository rsRep = new RadioStationRepository();
-            rsRep.RemoveStation(CurrentStation, StationList);
-
+            StationList= rsRep.RemoveStation(CurrentStation, StationList);
         }
 
         private void SaveListToXML()
