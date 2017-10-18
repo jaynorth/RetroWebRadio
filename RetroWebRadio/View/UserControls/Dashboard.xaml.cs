@@ -31,35 +31,18 @@ namespace RetroWebRadio.View.UserControls
         {
             InitializeComponent();
 
-            
-
-            
-
             dt.Tick += new EventHandler(dt_Tick);
             dt.Interval = new TimeSpan(0, 0, 1);
             //Buffering
-
             Player.BufferingStarted += Player_BufferingStarted;
-
             Player.BufferingEnded += Player_BufferingEnded;
 
             Player.MediaEnded += Player_MediaEnded;
-
             Player.MediaOpened += Player_MediaOpened;
-
             Player.MediaFailed += Player_MediaFailed;
 
-            Loaded += Dashboard_Loaded;
-
-
         }
 
-        private void Dashboard_Loaded(object sender, RoutedEventArgs e)
-        {
-            //test.Text = "ActualHeight : " + ActualHeight + " ActualWidth : " + ActualWidth + " " + " ratio : " + ActualHeight / ActualWidth;
-
-
-        }
 
         private void Player_MediaFailed(object sender, ExceptionRoutedEventArgs e)
         {

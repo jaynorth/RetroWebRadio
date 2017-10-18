@@ -6,21 +6,15 @@
              xmlns:local="clr-namespace:RetroWebRadio.View.UserControls" x:Name="closed"
               x:Class="RetroWebRadio.View.UserControls.Dashboard"
              mc:Ignorable="d" d:DesignWidth="466" d:DesignHeight="186" 
-    
-    
+
              >
-
-    <UserControl.Resources>
-
-    </UserControl.Resources>
-
 
 
     <Grid ShowGridLines="False"  >
         <Grid.Background>
 
 
-            <ImageBrush ImageSource="/Images/Brushed_metal_text.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="../../Images/Brushed_metal_text.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -55,12 +49,12 @@
               
             </StackPanel>
         </Border>
-        <Button x:Name="play_button"  Content="play" Grid.Column="1" Grid.Row="3"        Click="playButton_Click"  Height="Auto" Width="Auto" Style="{DynamicResource PauseStyle}" />
+        <Button x:Name="play_button"  Content="Play" Grid.Column="1" Grid.Row="3"        Click="playButton_Click"  Height="Auto" Width="Auto" Style="{DynamicResource PauseStyle}" />
         <Button x:Name="pause_button"  Content="Pause"  Grid.Column="2"  Grid.Row="3"   Click="pause_button_Click"  Background="#FFDDDDDD" Style="{DynamicResource PauseStyle}" />
 
-        <Button x:Name="stop_button" Content="stop" Grid.Column="3" Grid.Row="3"   Click="stopButton_Click" Style="{DynamicResource PauseStyle}" Margin="0,0.7,0,-0.384" />
+        <Button x:Name="stop_button" Content="Stop" Grid.Column="3" Grid.Row="3"   Click="stopButton_Click" Style="{DynamicResource PauseStyle}" Margin="0,0.7,0,-0.384" />
 
-        <Label Content="Volume" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1"></Label>
+        <Label Content="Volume" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" FontWeight="SemiBold"></Label>
         <Slider x:Name="volumeSlider"  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal"   ValueChanged="volumeSlider_ValueChanged" Minimum="0" Maximum="1"  VerticalAlignment="Center"  HorizontalAlignment="Stretch" Width="Auto"  Value="0" TickPlacement="TopLeft" TickFrequency="0.1" Style="{DynamicResource SliderStyle1}" Template="{DynamicResource SliderHorizontal}" />
 
         

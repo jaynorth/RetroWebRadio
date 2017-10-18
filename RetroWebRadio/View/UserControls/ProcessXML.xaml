@@ -10,44 +10,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="186" d:DesignWidth="466">
     <UserControl.Resources>
-        <Style x:Key="BrowseStyle1" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid Height="18.91" Width="62.04" d:LayoutOverrides="Width">
-                            <Rectangle RadiusY="4.5" RadiusX="4.5" Stroke="Black">
-                                <Rectangle.Fill>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="#FF818181" Offset="0"/>
-                                        <GradientStop Color="White" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Browse" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontFamily="Century Gothic" Foreground="Black"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true"/>
-                            <Trigger Property="IsMouseOver" Value="true"/>
-                            <Trigger Property="IsPressed" Value="true"/>
-                            <Trigger Property="IsEnabled" Value="false"/>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+      
     </UserControl.Resources>
     <Grid ShowGridLines="False" >
         <Grid.Background>
 
-            <ImageBrush ImageSource="/Images/Brushed_metal_text.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="../../Images/Brushed_metal_text.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="33*"></RowDefinition>
@@ -65,7 +33,7 @@
         <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="5" >
             <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
-                    <Label Content="Import XML File"></Label>
+                    <Label Content="XML File"></Label>
                     <Button Content="Browse" Command="{Binding Browse}" Height="Auto" Style="{DynamicResource BrowseStyle1}"></Button>
                 </StackPanel>
             </Border>
@@ -73,7 +41,7 @@
         <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="5" >
             <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1">
-                    <Label Content="Save Main XML"></Label>
+                    <Label Content="Main XML"></Label>
                     <Button Content="Save" Command="{Binding Save}" Height="Auto" Style="{DynamicResource ButtonStyleXML3}"></Button>
                 </StackPanel>
             </Border>
@@ -81,7 +49,7 @@
         <StackPanel Grid.Row="1" VerticalAlignment="Center"  Margin="5">
             <Border BorderBrush="Gray" BorderThickness="0" CornerRadius="6" Padding="2" >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="2">
-                    <TextBlock Text="Process Files in Application Folder" Foreground="Black" />
+                    <TextBlock Text="Files in Application Folder" Foreground="Black" />
                     <TextBlock  Text="{Binding FileList.Count, StringFormat='Currently {0} file(s) waiting ' }" Foreground="Black"></TextBlock>
 
                     <Button Content="Process" Command="{Binding ToBeProcessed}" Height="Auto" Style="{DynamicResource ProcessStyle1}"></Button>

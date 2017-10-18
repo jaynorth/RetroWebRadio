@@ -15,6 +15,6 @@
 
         </Grid.ColumnDefinitions>
 
-        <WindowsFormsHost  Name="windowsFormsHost1" Grid.Column="1" Height="Auto" Width="Auto" Margin="0, 40, 0, 40" Background="Beige" />
+        <WindowsFormsHost  x:Name="windowsFormsHost1" Grid.Column="1" Height="Auto" Width="Auto" Margin="0, 40, 0, 40" Background="Beige" />
     </Grid>
 </UserControl>

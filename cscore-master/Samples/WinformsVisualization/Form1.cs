@@ -167,8 +167,11 @@ namespace WinformsVisualization
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             _soundIn.Stop();
-       
-            // System.Environment.Exit(1);
+            _bitmap.Dispose();
+            _soundIn.Dispose();
+
+            Close();
+
             Application.Exit();
         }
     }

@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ViewModelsXML.ViewModels;
 using Models.Model;
+using WinformsVisualization;
+using System.Windows.Forms.Integration;
 
 namespace RetroWebRadio.View
 {
@@ -83,10 +85,9 @@ namespace RetroWebRadio.View
             // Shutdown the application.
             dashboardUserControl.Player.IsMuted = true;
             dashboardUserControl.Player.Stop();
-          //  System.Threading.Thread.Sleep(600);
-            Application.Current.Shutdown();
-           
-            // Environment.Exit(0);
+            //kill processes
+            Environment.Exit(0);
+
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -96,7 +97,9 @@ namespace RetroWebRadio.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-             App.Current.Shutdown();
+
+
+            App.Current.Shutdown();
           
         }
     }

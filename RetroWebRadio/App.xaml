@@ -10,12 +10,11 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--<ResourceDictionary Source="Assets/DictionaryTest.xaml"></ResourceDictionary>-->
-                <ResourceDictionary Source="Resources/PlayerStylesDic.xaml"/>
-                <ResourceDictionary Source="Resources/TestDic.xaml"/>
 
-                <!--<ResourceDictionary Source="AgainDic.xaml"/>-->
-                <ResourceDictionary Source="Resources/ProcessXMLuc.xaml"/>
+                <ResourceDictionary Source="Resources/DashboardDictionary.xaml"/>
+                <ResourceDictionary Source="Resources/ProcessXmlDictionary.xaml"/>
+                <ResourceDictionary Source="Resources/RadioListsDictionary.xaml"/>
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
        
