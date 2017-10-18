@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ViewModelsXML.ViewModels;
 using Models.Model;
-using WinformsVisualization;
+
 using System.Windows.Forms.Integration;
 
 namespace RetroWebRadio.View

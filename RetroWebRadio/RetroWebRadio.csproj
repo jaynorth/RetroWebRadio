@@ -203,10 +203,6 @@
     <Resource Include="Images\pg278q_taskbar_vertical_bars_notvisible.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cscore-master\Samples\WinformsVisualization\WinformsVisualization.csproj">
-      <Project>{ee2bf129-3451-4ada-8698-42ee2a293688}</Project>
-      <Name>WinformsVisualization</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{7AF07DC2-1637-405A-969D-2CA069AD0D6B}</Project>
       <Name>Models</Name>
@@ -214,6 +210,10 @@
     <ProjectReference Include="..\ViewModelsXML\ViewModelsXML.csproj">
       <Project>{18ac6d82-cb0e-4597-980c-1773256788bf}</Project>
       <Name>ViewModelsXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinformsVisualization\WinformsVisualization.csproj">
+      <Project>{EE2BF129-3451-4ADA-8698-42EE2A293688}</Project>
+      <Name>WinformsVisualization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModelsXML", "ViewModels
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{7AF07DC2-1637-405A-969D-2CA069AD0D6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformsVisualization", "cscore-master\Samples\WinformsVisualization\WinformsVisualization.csproj", "{EE2BF129-3451-4ADA-8698-42EE2A293688}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformsVisualization", "WinformsVisualization\WinformsVisualization.csproj", "{EE2BF129-3451-4ADA-8698-42EE2A293688}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
