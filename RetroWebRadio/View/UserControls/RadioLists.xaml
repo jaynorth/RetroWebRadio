@@ -13,7 +13,7 @@
 
         <Grid.Background>
 
-            <ImageBrush ImageSource="D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\Images\CRT_Screen.png"  />
+            <ImageBrush ImageSource="..\..\Images\CRT_Screen.png"  />
 
 
         </Grid.Background>

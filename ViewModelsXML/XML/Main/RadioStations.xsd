@@ -6,12 +6,12 @@
         <xs:element maxOccurs="unbounded" name="station">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="url" minOccurs="1" maxOccurs="1" type="xs:string" />
+              <xs:element name="url" minOccurs="1" maxOccurs="1"  type="xs:string" />
               <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
-              <xs:element name="category" type="xs:string" />
-              <xs:element name="country" type="xs:string" />
+              <xs:element name="category" type="xs:string" minOccurs="0" />
+              <xs:element name="country" type="xs:string" minOccurs="0" />
             </xs:sequence>
-            <xs:attribute name="id" type="xs:unsignedByte"  />
+            <xs:attribute name="id" type="xs:unsignedByte" use="optional" />
           </xs:complexType>
         </xs:element>
       </xs:sequence>

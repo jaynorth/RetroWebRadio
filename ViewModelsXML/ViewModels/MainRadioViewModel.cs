@@ -44,6 +44,7 @@ namespace ViewModelsXML.ViewModels
             Save = new RelayCommand(SaveListToXML);
             ToBeProcessed = new RelayCommand(ProcessFolderToXML);
             Remove = new RelayCommand(RemoveStation);
+            Search = new RelayCommand(LoadListView);
         }
 
         public RelayCommand Import { get; set; }
@@ -51,10 +52,46 @@ namespace ViewModelsXML.ViewModels
         public RelayCommand Remove { get; set; }
         public RelayCommand Browse { get; set; }
         public RelayCommand Save { get; set; }
-        public RelayCommand ToBeProcessed { get; set; }
-      
 
-       
+        public RelayCommand Search { get; set; }
+        public RelayCommand ToBeProcessed { get; set; }
+
+        public string searchstring { get; set; } = "search here";
+
+        public ObservableCollection<RadioStation> UnfilteredList { get; set; }
+
+        public  void LoadListView()
+        {
+            if (UnfilteredList==null)
+            {
+                UnfilteredList = this.StationList;
+            }
+            else
+            {
+                this.StationList = UnfilteredList;
+            }
+          
+            IEnumerable<RadioStation> StationList = this.StationList;
+            string searchString = this.searchstring;
+            MessageBox.Show(searchstring);
+
+
+            IEnumerable<RadioStation> query;
+     
+                query =
+                (from station in StationList
+                 where station.Name.ToUpper().Contains(searchString.ToUpper())
+
+                || station.Country.ToUpper().Contains(searchString.ToUpper())
+                || station.Category.ToUpper().Contains(searchString.ToUpper())
+
+                 orderby station.Name
+                 select station);
+        
+
+            this.StationList = new ObservableCollection<RadioStation>(query);
+        }
+
 
         public void DoFileDrop(IEnumerable<String> filePaths)
         {
@@ -278,6 +315,7 @@ namespace ViewModelsXML.ViewModels
         private void SaveListToXML()
         {
             RadioStationRepository rsRep = new RadioStationRepository();
+            StationList = UnfilteredList;
             StationList = rsRep.CleanMainList(StationList);
             XDocument doc =  rsRep.CreateNewXML(StationList);
             ValidateXML xmlValidate = new ValidateXML();
