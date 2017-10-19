@@ -177,7 +177,7 @@ BundleArtifacts/
 !*.[Cc]ache/
 
 # Others
-ClientBin/
+#ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
 *~
