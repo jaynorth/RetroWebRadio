@@ -126,14 +126,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RetroWebRadio.exe" size="3684256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RetroWebRadio.exe" size="3684768">
       <assemblyIdentity name="RetroWebRadio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0v3mc0aQ9jVYyjl9OxF/IfIk7i6yMZb5evDnm7OMrXY=</dsig:DigestValue>
+        <dsig:DigestValue>5j3eTyF+MbKRUSE9hgAk6ji+Us14JBybjr2JkYPNmJk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

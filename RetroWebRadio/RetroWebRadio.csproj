@@ -231,9 +231,7 @@
   <ItemGroup>
     <Resource Include="Images\speaker_fliped.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\UserControls\Copies\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\RustyMetal_texture.jpg" />
   </ItemGroup>

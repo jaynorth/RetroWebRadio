@@ -96,6 +96,10 @@ namespace RetroWebRadio.View.UserControls
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
+            play_button.Foreground = new SolidColorBrush(Colors.Red);
+            play_button.FontWeight = FontWeights.Bold;
+            
+            stop_button.Foreground = new SolidColorBrush(Colors.Black);
 
             Player.Play();
             displayBox.Text = "Attempt to play Stream";
@@ -109,10 +113,36 @@ namespace RetroWebRadio.View.UserControls
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
             Player.Stop();
+            stop_button.Foreground = new SolidColorBrush(Colors.Red);
+            stop_button.FontWeight = FontWeights.Bold;
+            play_button.Foreground = new SolidColorBrush(Colors.Black);
+            pause_button.Foreground = new SolidColorBrush(Colors.Black);
             displayBox.Text = "Stopped";
             //RadioOff.IsChecked = false;
 
             pause_button.IsEnabled = false;
+        }
+
+        private void pause_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (pause)
+            {
+                pause_button.Foreground = new SolidColorBrush(Colors.Black);
+                Player.Play();
+                pause = false;
+                displayBox.Text = "Playing from pause";
+            }
+            else
+            {
+                Player.Pause();
+                pause = true;
+                pause_button.Foreground = new SolidColorBrush(Colors.Red);
+                pause_button.FontWeight = FontWeights.Bold;
+           
+                displayBox.Text = "Paused";
+
+            }
+
         }
 
 
@@ -148,23 +178,7 @@ namespace RetroWebRadio.View.UserControls
 
         //}
 
-        private void pause_button_Click(object sender, RoutedEventArgs e)
-        {
-            if (pause)
-            {
-                Player.Play();
-                pause = false;
-                displayBox.Text = "Playing from pause";
-            }
-            else
-            {
-                Player.Pause();
-                pause = true;
-                displayBox.Text = "Paused";
-
-            }
-
-        }
+       
 
         private void TargetEventhandler(object sender, DataTransferEventArgs e)
         {
