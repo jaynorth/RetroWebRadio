@@ -96,7 +96,7 @@ namespace RetroWebRadio.View.UserControls
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            play_button.Foreground = new SolidColorBrush(Colors.Yellow);
+            play_button.Foreground = new SolidColorBrush(Colors.Orange);
             play_button.FontWeight = FontWeights.Bold;
             
             stop_button.Foreground = new SolidColorBrush(Colors.Black);
@@ -113,7 +113,7 @@ namespace RetroWebRadio.View.UserControls
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
             Player.Stop();
-            stop_button.Foreground = new SolidColorBrush(Colors.Yellow);
+            stop_button.Foreground = new SolidColorBrush(Colors.Orange);
             stop_button.FontWeight = FontWeights.Bold;
             play_button.Foreground = new SolidColorBrush(Colors.Black);
             pause_button.Foreground = new SolidColorBrush(Colors.Black);
@@ -136,8 +136,8 @@ namespace RetroWebRadio.View.UserControls
             {
                 Player.Pause();
                 pause = true;
-                pause_button.Foreground = new SolidColorBrush(Colors.Yellow);
-                pause_button.FontWeight = FontWeights.Bold;
+                pause_button.Foreground = new SolidColorBrush(Colors.Orange);
+ 
            
                 displayBox.Text = "Paused";
 
