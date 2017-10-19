@@ -106,6 +106,7 @@ namespace RetroWebRadio.View
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             SearchTextBox.Text = "";
+       
         }
 
  
