@@ -60,38 +60,7 @@ namespace ViewModelsXML.ViewModels
 
         public ObservableCollection<RadioStation> UnfilteredList { get; set; }
 
-        public  void LoadListView()
-        {
-            if (UnfilteredList==null)
-            {
-                UnfilteredList = this.StationList;
-            }
-            else
-            {
-                this.StationList = UnfilteredList;
-            }
-          
-            IEnumerable<RadioStation> StationList = this.StationList;
-            string searchString = this.searchstring;
-            MessageBox.Show(searchstring);
-
-
-            IEnumerable<RadioStation> query;
-     
-                query =
-                (from station in StationList
-                 where station.Name.ToUpper().Contains(searchString.ToUpper())
-
-                || station.Country.ToUpper().Contains(searchString.ToUpper())
-                || station.Category.ToUpper().Contains(searchString.ToUpper())
-
-                 orderby station.Name
-                 select station);
-        
-
-            this.StationList = new ObservableCollection<RadioStation>(query);
-        }
-
+       
 
         public void DoFileDrop(IEnumerable<String> filePaths)
         {
@@ -332,7 +301,38 @@ namespace ViewModelsXML.ViewModels
             
         }
 
-        
+        public void LoadListView()
+        {
+            if (UnfilteredList == null)
+            {
+                UnfilteredList = this.StationList;
+            }
+            else
+            {
+                this.StationList = UnfilteredList;
+            }
+
+            IEnumerable<RadioStation> StationList = this.StationList;
+            string searchString = this.searchstring;
+
+            IEnumerable<RadioStation> query;
+
+            query =
+            (from station in StationList
+             where station.Name.ToUpper().Contains(searchString.ToUpper())
+
+            || station.Country.ToUpper().Contains(searchString.ToUpper())
+            || station.Category.ToUpper().Contains(searchString.ToUpper())
+
+             orderby station.Name
+             select station);
+
+
+            this.StationList = new ObservableCollection<RadioStation>(query);
+        }
+
+
+
 
 
     }
