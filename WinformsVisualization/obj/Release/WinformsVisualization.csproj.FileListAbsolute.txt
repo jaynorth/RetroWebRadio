@@ -1,0 +1,9 @@
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\bin\Release\WinformsVisualization.dll
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\bin\Release\WinformsVisualization.pdb
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\bin\Release\CSCore.dll
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\bin\Release\CSCore.xml
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\obj\Release\WinformsVisualization.Form1.resources
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\obj\Release\WinformsVisualization.Properties.Resources.resources
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\obj\Release\WinformsVisualization.csproj.GenerateResource.Cache
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\obj\Release\WinformsVisualization.dll
+D:\Visual Studio Projects\Projects\RetroWebRadio\cscore-master\Samples\WinformsVisualization\obj\Release\WinformsVisualization.pdb
