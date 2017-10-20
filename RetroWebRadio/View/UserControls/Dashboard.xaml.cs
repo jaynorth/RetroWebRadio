@@ -98,6 +98,7 @@ namespace RetroWebRadio.View.UserControls
         {
             play_button.Foreground = new SolidColorBrush(Colors.Orange);
             play_button.FontWeight = FontWeights.Bold;
+           
             
             stop_button.Foreground = new SolidColorBrush(Colors.Black);
 
