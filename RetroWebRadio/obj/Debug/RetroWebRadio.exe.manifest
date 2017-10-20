@@ -114,26 +114,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Models.dll" size="8704">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Models.dll" size="9216">
       <assemblyIdentity name="Models" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+8InKaz/37C/u4MVYqcdgSYRq+j6haRbmOh1t4TDPXc=</dsig:DigestValue>
+        <dsig:DigestValue>Ejqhf0yP/gwXg46PqZo7jDJXm9xqbLxx++xI511c6Yc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RetroWebRadio.exe" size="3692960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RetroWebRadio.exe" size="3691936">
       <assemblyIdentity name="RetroWebRadio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iPcoNw5mSvUhPb3taAB6VZgLjLSASP6WlM6Se9jqkwY=</dsig:DigestValue>
+        <dsig:DigestValue>5KXKg9WD2qIzO8RHmgPyi2vai6O0XGIWzVmUa35xqlg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -270,14 +270,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ViewModelsXML.dll" size="17920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ViewModelsXML.dll" size="20992">
       <assemblyIdentity name="ViewModelsXML" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IPzGZ+3srsDYzXY96hAyyhehAeY4GMcwJyL/89xBoOs=</dsig:DigestValue>
+        <dsig:DigestValue>YB7aR80FRzCpvTwPGV596LpOoI4bFyem1KZzggneO8Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QrHp9ePW6tqMmluZVB1GDt+w501GK0YLdkNk7tukZNU=</dsig:DigestValue>
+        <dsig:DigestValue>Cdbrs/RUne21LXM6GHpxpQQ4snlM46Q8Luo1Ori0jys=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

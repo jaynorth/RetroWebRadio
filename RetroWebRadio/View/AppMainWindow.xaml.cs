@@ -53,20 +53,23 @@ namespace RetroWebRadio.View
 
             if (CurrentStation!=null)
             {
-                System.Uri uri = new System.Uri(CurrentStation.Url);
-                dashboardUserControl.Player.Source = uri;
-                dashboardUserControl.Player.IsMuted = false;
+                
+
+                try
+                {
+                    System.Uri uri = new System.Uri(CurrentStation.Url);
+                    dashboardUserControl.Player.Source = uri;
+                    dashboardUserControl.Player.IsMuted = false;
+                }
+                catch (Exception e)
+                {
+
+                    MessageBox.Show("There was an Error with the URL stream location!, please skip to next station\n" + e.Message);
+
+                }
+              
             }        
                     
-               
-       
-
-                
- 
-            
-
-            
-
         }
 
         private void Window_loaded(object sender, RoutedEventArgs e)

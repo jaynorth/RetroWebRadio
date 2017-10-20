@@ -9,9 +9,6 @@ using System.Xml.Linq;
 
 namespace Models.Model
 {
-
-
-
    public class RadioStationRepository
     {
         public RadioStationRepository()
@@ -40,6 +37,8 @@ namespace Models.Model
             foreach (var item in list)
             {
                 item.Id = Id;
+                TrimItems(item);
+                FillEmptyString(item);
                 Id++;
             }
 
@@ -54,8 +53,8 @@ namespace Models.Model
             List<RadioStation> newlist = (from station in doc.Descendants("station")
                                           select new RadioStation()
                                           {
-                                              //  Id = (int)station.Element("id"),
-                                              Name = (string)station.Element("name"),
+                          
+                                              Name = (string)station.Element("name") ,
                                               Category = (string)station.Element("category"),
                                               Country = (string)station.Element("country"),
                                               Url = (string)station.Element("url")
@@ -71,9 +70,38 @@ namespace Models.Model
             foreach (var item in newlist)
             {
                 item.Id = topId + 1;
-                StationList.Add(item);
+                TrimItems(item);
+
+                if (string.IsNullOrEmpty(item.Name) || string.IsNullOrEmpty(item.Url) || item.Url.Length < 8)
+                {
+                    continue;
+                }
+                FillEmptyString(item);
                 topId++;
+                StationList.Add(item);
+
             }
+        }
+
+        private static void FillEmptyString(RadioStation item)
+        {
+            if (string.IsNullOrEmpty(item.Category))
+            {
+                item.Category = "--";
+            }
+
+            if (string.IsNullOrEmpty(item.Country))
+            {
+                item.Country = "--";
+            }
+        }
+
+        private static void TrimItems(RadioStation item)
+        {
+            item.Name = item.Name.Trim();
+            item.Url = item.Url.Trim();
+            item.Category = item.Category.Trim();
+            item.Country = item.Country.Trim();
         }
 
         public ObservableCollection<RadioStation> RemoveStation(RadioStation CurrentStation,  ObservableCollection<RadioStation> StationList)
@@ -120,6 +148,11 @@ namespace Models.Model
 
             StationList = new ObservableCollection<RadioStation>(query);
 
+            foreach (var item in StationList)
+            {
+                FillEmptyString(item);
+            }
+
             MessageBox.Show("Main List cleaned");
 
             return StationList;
@@ -131,8 +164,5 @@ namespace Models.Model
             doc.Save(@"..\..\..\ViewModelsXML\XML\Main\RadioStations.xml");
         }
     }
-
-
-   
 
 }

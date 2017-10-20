@@ -15,3 +15,4 @@ D:\Visual Studio Projects\Projects\RetroWebRadio\WinformsVisualization\obj\Debug
 D:\Visual Studio Projects\Projects\RetroWebRadio\WinformsVisualization\obj\Debug\WinformsVisualization.csproj.GenerateResource.Cache
 D:\Visual Studio Projects\Projects\RetroWebRadio\WinformsVisualization\obj\Debug\WinformsVisualization.dll
 D:\Visual Studio Projects\Projects\RetroWebRadio\WinformsVisualization\obj\Debug\WinformsVisualization.pdb
+D:\Visual Studio Projects\Projects\RetroWebRadio\WinformsVisualization\obj\Debug\WinformsVisualization.csprojResolveAssemblyReference.cache

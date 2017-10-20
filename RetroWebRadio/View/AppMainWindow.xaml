@@ -9,7 +9,8 @@
         xmlns:userControls="clr-namespace:RetroWebRadio.View.UserControls"
         mc:Ignorable="d"
         WindowStyle="None"
-        AllowsTransparency="False"
+        AllowsTransparency="False"  
+                           
         
         
        Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }" 
@@ -22,7 +23,9 @@
         Title="StreamRadio" 
         ResizeMode="CanResizeWithGrip"  Closing="Window_Closing"
         >
-    <!--Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"-->
+    <!--if AllowsTransparency set to True Winforms cannot be displayed-->
+    
+    
     <Border BorderBrush="Black" BorderThickness="10" MouseLeftButtonDown="Border_MouseLeftButtonDown" >
     <Grid ShowGridLines="False" Background="Black">
 
@@ -59,7 +62,6 @@
             </Rectangle.Fill>
         </Rectangle>
         <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <!--<Label Content="Search"  Foreground="White" Margin="0,0,5,0" VerticalAlignment="Center"></Label>-->
             <TextBox x:Name="SearchTextBox" Text="{Binding searchstring, UpdateSourceTrigger=PropertyChanged}" Width="180" Margin="0, 0, 0, 0" VerticalAlignment="Center" Height="30" VerticalContentAlignment="Center" GotFocus="TextBox_GotFocus" Background="Transparent" Foreground="White" BorderBrush="Gray" >
                 <TextBox.InputBindings>
                     <KeyBinding Command="{Binding Search}" Key="Return" />
@@ -90,10 +92,9 @@
 
         <userControls:EditList Grid.Row="6" Grid.Column="3"></userControls:EditList>
         <!--<Button x:Name="Maximize" Content="Button" Grid.Column="5" HorizontalAlignment="Right" Margin="0,3,15,2.396" Style="{DynamicResource MaximizeStyle}" Width="30" Height="30" VerticalAlignment="Top" Click="Maximize_Click"/>
-   
         <Button x:Name="Minimize" Content="Button" Grid.Column="5" HorizontalAlignment="Right" Margin="0,3,50,2.396" Width="30" Style="{DynamicResource MinimizeStyle}" VerticalAlignment="Top" Click="Minimize_Click"/>-->
       
-        <Button Content="[]" Grid.Column="5" HorizontalAlignment="Right" Margin="0,3,15,2.396" Width="30" Height="30" VerticalAlignment="Top" Click="Maximize_Click" Foreground="White" Background="Transparent"></Button>
+        <Button Content="[ ]" Grid.Column="5" HorizontalAlignment="Right" Margin="0,3,15,2.396" Width="30" Height="30" VerticalAlignment="Top" Click="Maximize_Click" Foreground="White" Background="Transparent"></Button>
         <Button Content="-" Grid.Column="5" HorizontalAlignment="Right" Margin="0,3,50,2.396" Width="30" Height="30" VerticalAlignment="Top" Foreground="White" Background="Transparent" Click="Minimize_Click" /> 
         <Button Content="[X]"  VerticalAlignment="Top" Height="Auto" Grid.Row="0" Grid.Column="6" Foreground="White" Background="Transparent"  Click="Button_Click" Margin="-10,3,0,0" Style="{DynamicResource closeButtonStyle}"/>
 

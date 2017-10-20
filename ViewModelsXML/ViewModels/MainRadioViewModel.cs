@@ -28,7 +28,10 @@ namespace ViewModelsXML.ViewModels
             //Application Folder containing XML Files waiting to be processed
             AppXmlFolderToBeProcessed = @"..\..\..\ViewModelsXML\XML\ToBeProcessed";
             GetFileListInApplicationFolder(AppXmlFolderToBeProcessed);
-            //##############################################################
+
+
+            //Show Message Box when XSD validation succeeded
+            IsShowValidationSucceeded = false;
 
             _droppedItems = new ObservableCollection<string>();
             InitCommands();
@@ -60,7 +63,7 @@ namespace ViewModelsXML.ViewModels
 
         public ObservableCollection<RadioStation> UnfilteredList { get; set; }
 
-       
+        public bool IsShowValidationSucceeded { get; set; }
 
         public void DoFileDrop(IEnumerable<String> filePaths)
         {
@@ -140,6 +143,7 @@ namespace ViewModelsXML.ViewModels
             RadioStationRepository rsRep = new RadioStationRepository();
 
             StationList = rsRep.GetStations(doc);
+            UnfilteredList = StationList;
 
         }
 
@@ -265,7 +269,7 @@ namespace ViewModelsXML.ViewModels
         {
             ValidateXML xmlValidate = new ValidateXML();
 
-            if (xmlValidate.validate(filePath, true))
+            if (xmlValidate.validate(filePath, IsShowValidationSucceeded))
             {
                 XDocument NewDoc = XDocument.Load(filePath);
 
@@ -279,6 +283,7 @@ namespace ViewModelsXML.ViewModels
         {
             RadioStationRepository rsRep = new RadioStationRepository();
             StationList= rsRep.RemoveStation(CurrentStation, StationList);
+            UnfilteredList = StationList;
         }
 
         private void SaveListToXML()
@@ -288,7 +293,7 @@ namespace ViewModelsXML.ViewModels
             StationList = rsRep.CleanMainList(StationList);
             XDocument doc =  rsRep.CreateNewXML(StationList);
             ValidateXML xmlValidate = new ValidateXML();
-            if (xmlValidate.validate(doc, false))
+            if (xmlValidate.validate(doc, IsShowValidationSucceeded))
             {
                 rsRep.SaveXML(doc);
                 MessageBox.Show("XML File re-created and saved");

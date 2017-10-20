@@ -153,7 +153,7 @@ namespace RetroWebRadio.View.UserControls
             double vol;
             double v = volumeSlider.Value;
             double decibel = Math.Log(10, v) * -0.01;
-            //volumeDisplay.Text = decibel.ToString();
+
             if (v > 0 && Double.IsNaN(decibel))
             {
                 decibel = 1d;
@@ -168,18 +168,12 @@ namespace RetroWebRadio.View.UserControls
             {
                 vol = decibel;
             }
-            //volumeDisplay.Text = vol.ToString();
+
 
             Player.Volume = vol;
         }
 
-        //private void StackPanel_SizeChanged(object sender, SizeChangedEventArgs e)
-        //{
-        //    volumeSlider.Height = volumeStack.ActualHeight - 5;
-
-        //}
-
-       
+      
 
         private void TargetEventhandler(object sender, DataTransferEventArgs e)
         {

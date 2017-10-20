@@ -50,57 +50,51 @@
     <country>Brazil</country>
   </station>
   <station id="18">
+    <url>http://206.190.136.140:5022/;stream/1</url>
+    <name>Music City Roadhouse</name>
+    <category>Electric Blues </category>
+    <country>USA</country>
+  </station>
+  <station id="19">
     <url>http://808.rastamusic.com/rastamusic.mp3</url>
     <name>808 Live Reggaecast</name>
     <category>Reggae</category>
-    <country>--</country>
-  </station>
-  <station id="19">
-    <url>http://1.ice1.firststreaming.com/kkjz_fm.mp3</url>
-    <name>KKJZ - KJazz 88.1</name>
-    <category>Jazz</category>
-    <country>--</country>
+    <country>unknown</country>
   </station>
   <station id="20">
-    <url>http://sj128.hnux.com</url>
-    <name>SmoothJazz.com Global Radio</name>
-    <category>Jazz</category>
-    <country>--</country>
+    <url>http://1.ice1.firststreaming.com/kkjz_fm.mp3</url>
+    <name>KKJZ - KJazz 88.1</name>
+    <category></category>
+    <country>undefined</country>
   </station>
   <station id="21">
-    <url>http://206.190.136.140:5022/;stream/1</url>
-    <name>Music City Roadhouse</name>
-    <category>Electric Blues</category>
-    <country>USA</country>
+    <url>http://sj128.hnux.com</url>
+    <name>SmoothJazz.com Global Radio</name>
+    <category></category>
+    <country>undefined</country>
   </station>
   <station id="22">
     <url>http://mitm.digistream.info:8052/</url>
     <name>Martini in the Morning</name>
-    <category>Jazz</category>
-    <country>--</country>
+    <category></category>
+    <country>undefined</country>
   </station>
   <station id="23">
-    <url>http://stream.xmission.com:8000/kpcw</url>
-    <name>KPCW Radio, Park City, Utah</name>
-    <category>News</category>
-    <country>--</country>
+    <url></url>
+    <name></name>
+    <category></category>
+    <country>undefined</country>
   </station>
   <station id="24">
-    <url>http://198.178.123.11:7080</url>
-    <name>MPIR Old Time Radio</name>
-    <category>Old School</category>
-    <country>--</country>
-  </station>
-  <station id="25">
-    <url>http://live.francra.org:8000/CouleursFM</url>
-    <name>Couleurs FM</name>
-    <category>Rock</category>
-    <country>France</country>
-  </station>
-  <station id="26">
-    <url>http://199.180.72.29:8000</url>
-    <name>Southern Gospel Radio</name>
-    <category>Gospel</category>
-    <country>--</country>
+    <url>
+http://199.180.72.29:8000
+</url>
+    <name>
+Southern Gospel Radio
+</name>
+    <category>
+Gospel
+</category>
+    <country>undefined</country>
   </station>
 </stations>

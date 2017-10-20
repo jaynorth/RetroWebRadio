@@ -12,6 +12,7 @@
             <ColumnDefinition Width="5*"></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
+        
 
         <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="right" Margin="10">
             <!--<Label Content="Remove Selected Station" HorizontalAlignment="Right" Foreground="White" ></Label>-->

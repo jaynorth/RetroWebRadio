@@ -47,7 +47,6 @@ D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\Generat
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio_MarkupCompile.cache
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio_MarkupCompile.lref
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\App.baml
-D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\AppMainWindowDictionary.baml
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\Resources\DashboardDictionary.baml
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\Resources\ProcessXmlDictionary.baml
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\Resources\RadioListsDictionary.baml
@@ -64,3 +63,4 @@ D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWe
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio.application
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio.exe
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio.pdb
+D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\Resources\AppMainWindowDictionary.baml

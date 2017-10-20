@@ -42,14 +42,13 @@ namespace RetroWebRadio.View.UserControls
 
         private void datagridRadioList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-        
-            StationSelectedEvent((RadioStation)datagridRadioList.SelectedItem);
+            if (datagridRadioList.SelectedItem!=null)
+            {
+                StationSelectedEvent((RadioStation)datagridRadioList.SelectedItem);
+            }
+            
         }
 
-        private void test(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("clicked");
-        }
+
     }
 }
