@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\App.xaml
-9-1979158947
+101245952018
 
 10-1028104051
 73-2139877823
-Resources\DashboardDictionary.xaml;Resources\ProcessXmlDictionary.xaml;Resources\RadioListsDictionary.xaml;View\AppMainWindow.xaml;View\UserControls\Dashboard.xaml;View\UserControls\EditList.xaml;View\UserControls\ProcessXML.xaml;View\UserControls\RadioLists.xaml;View\UserControls\SpectrumUserControl.xaml;
+AppMainWindowDictionary.xaml;Resources\DashboardDictionary.xaml;Resources\ProcessXmlDictionary.xaml;Resources\RadioListsDictionary.xaml;View\AppMainWindow.xaml;View\UserControls\Dashboard.xaml;View\UserControls\EditList.xaml;View\UserControls\ProcessXML.xaml;View\UserControls\RadioLists.xaml;View\UserControls\SpectrumUserControl.xaml;
 
 False
 

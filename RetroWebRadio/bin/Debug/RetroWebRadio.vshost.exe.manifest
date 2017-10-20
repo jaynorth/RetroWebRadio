@@ -121,19 +121,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bTQsF4Mjn2WF0JuvGGYleUdrRhER+75wvlvdxVBwdCs=</dsig:DigestValue>
+        <dsig:DigestValue>lKXCSQQB8S8PWkLg6F4dlJDL3+0r1hlUfh/hlkF3pOE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RetroWebRadio.exe" size="3684768">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RetroWebRadio.exe" size="3692960">
       <assemblyIdentity name="RetroWebRadio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Vf0TAcT1ACHDwvKe6FzqKYHWLc1z1+HlMcBckNmWHpc=</dsig:DigestValue>
+        <dsig:DigestValue>C7v2T24pczIrlxRzegR7JZFisQZoog0302Is6v6mNgc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -277,7 +277,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9LUja7Bg/nITylBAr5NbtvaJlit1uIl56dUpSJJox4M=</dsig:DigestValue>
+        <dsig:DigestValue>JKhKccppObGXE3DkJStQ7PDGPvKgRRJsTy1BprSaZRM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NXPDAkOF8NLLEFtyNPNZcQrjAZ17uniV1ddJyaJ54EU=</dsig:DigestValue>
+        <dsig:DigestValue>iHn91bHAxP+ModFUrkQH2t2m4gp3Ao4RJB0nVy0jz8g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -63,3 +63,4 @@ D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWe
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio.application
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio.exe
 D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\RetroWebRadio.pdb
+D:\Visual Studio Projects\Projects\RetroWebRadio\RetroWebRadio\obj\Debug\AppMainWindowDictionary.baml

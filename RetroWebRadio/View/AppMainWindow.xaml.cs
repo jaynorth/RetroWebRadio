@@ -24,7 +24,7 @@ namespace RetroWebRadio.View
     /// </summary>
     public partial class CopyMainWindow : Window
     {
-        private double aspectRatio = 0.0;
+        
         public CopyMainWindow()
         {
             MainRadioViewModel MRVM = new MainRadioViewModel();
@@ -41,6 +41,8 @@ namespace RetroWebRadio.View
             RadioListsUC.StationSelectedEvent += ChangePlayerSource;
         }
 
+        private double aspectRatio = 0.0;
+      
         private void ChangePlayerSource(RadioStation CurrentStation)
         {
 
@@ -109,6 +111,30 @@ namespace RetroWebRadio.View
        
         }
 
- 
+        private void Maximize_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+
+            }
+
+         
+        }
+
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

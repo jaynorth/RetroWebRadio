@@ -127,6 +127,10 @@
     <Compile Include="View\UserControls\SpectrumUserControl.xaml.cs">
       <DependentUpon>SpectrumUserControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="AppMainWindowDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\DashboardDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
