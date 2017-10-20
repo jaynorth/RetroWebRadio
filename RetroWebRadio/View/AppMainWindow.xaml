@@ -9,7 +9,8 @@
         xmlns:userControls="clr-namespace:RetroWebRadio.View.UserControls"
         mc:Ignorable="d"
         WindowStyle="None"
-        AllowsTransparency="True"
+        AllowsTransparency="False"
+        
         
        Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }" 
      Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"
@@ -22,7 +23,7 @@
         ResizeMode="CanResizeWithGrip"  Closing="Window_Closing"
         >
     <!--Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.6' }"-->
-    <Border BorderBrush="Black" BorderThickness="10" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+    <Border BorderBrush="Black" BorderThickness="15" MouseLeftButtonDown="Border_MouseLeftButtonDown" >
     <Grid ShowGridLines="False" Background="Black">
 
 

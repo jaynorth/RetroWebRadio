@@ -3,4 +3,3 @@ D:\Visual Studio Projects\Projects\RetroWebRadio\Models\bin\Debug\Models.dll
 D:\Visual Studio Projects\Projects\RetroWebRadio\Models\bin\Debug\Models.pdb
 D:\Visual Studio Projects\Projects\RetroWebRadio\Models\obj\Debug\Models.dll
 D:\Visual Studio Projects\Projects\RetroWebRadio\Models\obj\Debug\Models.pdb
-D:\Visual Studio Projects\Projects\RetroWebRadio\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
