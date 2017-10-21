@@ -37,13 +37,14 @@ namespace ViewModelsXML.Tools
                 {
 
                     //MessageBox.Show(Filename + " is not valid: " + e.Message);
+                    MessageBox.Show(Filename + ": XSD validation failed\n" +e.Message);
 
                     Validated = false;
                 });
 
                 if (Validated == false)
                 {
-                    MessageBox.Show(Filename + ": XSD validation failed");
+                  //  MessageBox.Show(Filename + ": XSD validation failed" );
                 }
                 else if (showSucceedMessage)
                 {

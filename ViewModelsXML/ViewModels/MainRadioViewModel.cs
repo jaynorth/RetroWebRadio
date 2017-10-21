@@ -275,6 +275,7 @@ namespace ViewModelsXML.ViewModels
 
                 RadioStationRepository rsRep = new RadioStationRepository();
                 rsRep.AddStations(NewDoc, StationList);
+                StationList = rsRep.CleanMainList(StationList);
             }
             
         }

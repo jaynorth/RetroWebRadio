@@ -98,10 +98,19 @@ namespace Models.Model
 
         private static void TrimItems(RadioStation item)
         {
-            item.Name = item.Name.Trim();
-            item.Url = item.Url.Trim();
-            item.Category = item.Category.Trim();
-            item.Country = item.Country.Trim();
+            try
+            {
+                item.Name = item.Name.Trim();
+                item.Url = item.Url.Trim();
+                item.Category = item.Category.Trim();
+                item.Country = item.Country.Trim();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+   
         }
 
         public ObservableCollection<RadioStation> RemoveStation(RadioStation CurrentStation,  ObservableCollection<RadioStation> StationList)
@@ -144,7 +153,7 @@ namespace Models.Model
 
         public ObservableCollection<RadioStation> CleanMainList(ObservableCollection<RadioStation> StationList)
         {
-            var query = StationList.GroupBy(x => x.Url.ToUpper()).Select(y => y.Last()).ToList();
+            var query = StationList.GroupBy(x => x.Url.ToUpper()).Select(y => y.First()).ToList();
 
             StationList = new ObservableCollection<RadioStation>(query);
 

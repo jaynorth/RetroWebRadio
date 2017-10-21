@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ejqhf0yP/gwXg46PqZo7jDJXm9xqbLxx++xI511c6Yc=</dsig:DigestValue>
+        <dsig:DigestValue>1bGsLuNK5OQkOQcQPqZHkeT5Ax4oOX2SIa39DllaW00=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,7 +133,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5KXKg9WD2qIzO8RHmgPyi2vai6O0XGIWzVmUa35xqlg=</dsig:DigestValue>
+        <dsig:DigestValue>ewcdrWtzfXu/cESH71Jni03IMvGCnLnxs7S5ZDN3BQw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -270,14 +270,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ViewModelsXML.dll" size="20992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ViewModelsXML.dll" size="22528">
       <assemblyIdentity name="ViewModelsXML" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YB7aR80FRzCpvTwPGV596LpOoI4bFyem1KZzggneO8Q=</dsig:DigestValue>
+        <dsig:DigestValue>ZiwK2l4W6J+Prcj1AkTt3Dr/fmwDl2SU0zNtHt8md9w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

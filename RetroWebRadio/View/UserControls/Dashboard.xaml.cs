@@ -131,7 +131,7 @@ namespace RetroWebRadio.View.UserControls
                 pause_button.Foreground = new SolidColorBrush(Colors.Black);
                 Player.Play();
                 pause = false;
-                displayBox.Text = "Playing from pause";
+                displayBox.Text = "Playing ..";
             }
             else
             {
